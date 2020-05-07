@@ -77,6 +77,7 @@ export const middleBox = (
     alignItems="center"
     borderBottom={{ md: "0.8em solid #ffecb2" }}
     w="95%"
+    p={{ md: 0, xs: 5 }}
     minHeight={{ md: "27rem" }}
   >
     <Box
@@ -182,7 +183,7 @@ export const contactBox = (
     </PseudoBox>
     <Flex
       mt={4}
-      width="30%"
+      width={{ md: "30%" }}
       justifyContent="flex-start"
       alignItems="center"
       color="#282c35"
