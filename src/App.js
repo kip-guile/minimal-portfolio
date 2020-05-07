@@ -1,25 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { ThemeProvider, CSSReset } from "@chakra-ui/core";
+import { BrowserRouter, Switch } from "react-router-dom";
+import { theme } from "@chakra-ui/core";
+import "./App.css";
+import Main from "./pages/main";
+import AboutComponent from "./pages/AboutComponent";
+import Projects from "./pages/Projects";
+
+const customTheme = {
+  ...theme,
+  colors: {
+    ...theme.colors,
+    brand: {
+      900: "#1a365d",
+      800: "#153e75",
+      700: "#2a69ac",
+    },
+  },
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={customTheme}>
+      <CSSReset />
+      <BrowserRouter>
+        <Switch>
+          <Main exact path="/" component={AboutComponent} />
+          <Main exact path="/projects" component={Projects} />
+        </Switch>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 
