@@ -45,14 +45,18 @@ export const nameBox = (
     >
       Alexander Oguejiofor
     </Text>
-    <Text fontSize="sm" fontFamily="Cousine">
+    <Text
+      textAlign={{ md: "center", xs: "justify" }}
+      fontSize={{ xs: "18px" }}
+      fontFamily="Cousine"
+    >
       Web Developer & Business Analyst
     </Text>
     <Flex mt={5}>
       <IconContext.Provider value={{ className: "react-icon" }}>
         <MdLocationOn style={{ fontSize: "1.2em", marginRight: "10px" }} />
       </IconContext.Provider>
-      <Text fontSize="sm" fontFamily="Cousine">
+      <Text fontSize={{ xs: "18px" }} fontFamily="Cousine">
         Lagos, NG
       </Text>
     </Flex>
@@ -69,6 +73,7 @@ export const navLinks = (
       <PseudoBox
         as="a"
         borderBottom="solid #ffecb2 1px"
+        fontSize={{ xs: "18px" }}
         _active={{ color: "#ffa7c4", borderBottom: "solid #ffa7c4 1px" }}
         _hover={{ color: "#ffa7c4", borderBottom: "solid #ffa7c4 1px" }}
       >
@@ -80,6 +85,7 @@ export const navLinks = (
     </Text>
     <NavLink to="/">
       <PseudoBox
+        fontSize={{ xs: "18px" }}
         as="a"
         borderBottom="solid #ffecb2 1px"
         _active={{ color: "#ffa7c4", borderBottom: "solid #ffa7c4 1px" }}

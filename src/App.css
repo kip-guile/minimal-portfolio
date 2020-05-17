@@ -1,6 +1,8 @@
 :root {
   background-color: #282c35;
   font-family: "Cousine, monospace";
+  display: flex;
+  justify-content: space-around;
 }
 
 .react-icon {

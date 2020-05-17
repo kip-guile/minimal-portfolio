@@ -10,9 +10,10 @@ const Main = ({ component: Component, ...rest }) => {
       render={(props) => {
         return (
           <Box
-            w="100vw"
+            w={{ md: "100vw", xs: "95vw" }}
             h={{ md: "100vh" }}
-            display={{ md: "flex" }}
+            display={{ md: "flex", xs: "flex" }}
+            flexDirection={{ md: "row", xs: "column" }}
             bg="#282c35"
             color="hsla(0,0%,100%,0.88)"
           >

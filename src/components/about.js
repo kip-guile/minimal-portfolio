@@ -107,6 +107,7 @@ export const middleBox = (
       justifyContent="space-around"
       flexBasis={{ md: "31%" }}
       h={{ md: "90%" }}
+      p={1}
     >
       <Text
         fontSize="lg"
@@ -115,11 +116,16 @@ export const middleBox = (
         mb={5}
         color="#ffa7c4"
         fontFamily="Cousine, monospace"
-        textAlign="center"
+        textAlign="justify"
       >
         I'm a Full Stack Web Developer & Business Analyst
       </Text>
-      <Text fontSize="md" fontFamily="Cousine" paddingBottom={{ md: 20 }}>
+      <Text
+        fontSize={{ xs: "18px" }}
+        textAlign="justify"
+        fontFamily="Cousine"
+        paddingBottom={{ md: 20 }}
+      >
         with a passion for collaboration, and bringing useful ideas to fruition.
         Constantly looking to ask the right questions
       </Text>
@@ -130,6 +136,7 @@ export const middleBox = (
       justifyContent="space-around"
       flexBasis={{ md: "30%" }}
       h={{ md: "90%" }}
+      p={2}
     >
       <Text
         fontSize="lg"
