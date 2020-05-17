@@ -2,6 +2,8 @@ import React from "react";
 import { Box, Text, Flex, Image, PseudoBox } from "@chakra-ui/core";
 import { NavLink } from "react-router-dom";
 import logo from "../image/pink_logo.png";
+import { MdLocationOn } from "react-icons/md";
+import { IconContext } from "react-icons";
 
 export const logoBox = (
   <Box
@@ -46,6 +48,14 @@ export const nameBox = (
     <Text fontSize="sm" fontFamily="Cousine">
       Web Developer & Business Analyst
     </Text>
+    <Flex mt={5}>
+      <IconContext.Provider value={{ className: "react-icon" }}>
+        <MdLocationOn style={{ fontSize: "1.2em", marginRight: "10px" }} />
+      </IconContext.Provider>
+      <Text fontSize="sm" fontFamily="Cousine">
+        Lagos, NG
+      </Text>
+    </Flex>
   </Box>
 );
 export const navLinks = (

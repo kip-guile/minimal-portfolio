@@ -9,10 +9,21 @@ import {
   DiPostgresql,
   DiMongodb,
   DiTravis,
+  DiMysql,
+  DiLinux,
 } from "react-icons/di";
 import { AiFillLinkedin, AiFillGithub, AiFillHtml5 } from "react-icons/ai";
-import { FaGoodreads, FaNodeJs, FaVuejs, FaLess } from "react-icons/fa";
+import {
+  FaGoodreads,
+  FaNodeJs,
+  FaVuejs,
+  FaLess,
+  FaPython,
+  FaTrello,
+  FaAws,
+} from "react-icons/fa";
 import { BsGraphUp } from "react-icons/bs";
+import { GiJesterHat } from "react-icons/gi";
 
 const skills = [
   { tag: DiJavascript1, name: "JavaScript" },
@@ -20,16 +31,22 @@ const skills = [
   { tag: FaNodeJs, name: "NodeJS" },
   { tag: FaVuejs, name: "Vue" },
   { tag: AiFillHtml5, name: "HTML5" },
+  { tag: FaPython, name: "Python" },
+  { tag: DiMysql, name: "MySQL" },
   { tag: DiCss3, name: "CSS3" },
   { tag: DiReact, name: "Redux" },
-  { tag: DiGit, name: "Git" },
   { tag: DiPostgresql, name: "PostGresDB" },
   { tag: DiMongodb, name: "MongoDB" },
-  { tag: DiTravis, name: "TravisCI" },
   { tag: FaLess, name: "Less" },
 ];
 
 const baSkills = [
+  { tag: DiGit, name: "Git" },
+  { tag: FaAws, name: "AWS" },
+  { tag: FaTrello, name: "Trello" },
+  { tag: GiJesterHat, name: "Jest" },
+  { tag: DiTravis, name: "TravisCI" },
+  { tag: DiLinux, name: "Linux" },
   { tag: BsGraphUp, name: "Requirement Management" },
   { tag: BsGraphUp, name: "Elicitation" },
   { tag: BsGraphUp, name: "Quality Assurance" },
@@ -37,9 +54,13 @@ const baSkills = [
 
 const tag = (name, Logo, color, key) => (
   <Box mb={5} key={key}>
-    <Tag mr={2} mb={2} variantColor={color} rounded="full" size="sm">
+    <Tag mr={2} mb={2} variantColor={color} size="md">
       <Logo
-        style={{ backgroundColor: "hsla(0,0%,100%,0.88)", color: "#282c35" }}
+        style={{
+          backgroundColor: "hsla(0,0%,100%,0.88)",
+          color: "#282c35",
+          marginRight: "5px",
+        }}
       />
       <TagLabel>{name}</TagLabel>
     </Tag>
@@ -83,7 +104,7 @@ export const middleBox = (
     <Box
       display="flex"
       flexDirection="column"
-      justifyContent="flex start"
+      justifyContent="space-around"
       flexBasis={{ md: "31%" }}
       h={{ md: "90%" }}
     >
@@ -94,18 +115,19 @@ export const middleBox = (
         mb={5}
         color="#ffa7c4"
         fontFamily="Cousine, monospace"
+        textAlign="center"
       >
-        I'm a Full Stack Web Developer
+        I'm a Full Stack Web Developer & Business Analyst
       </Text>
-      <Text fontSize="sm" fontFamily="Cousine">
-        with a passion for clean code, collaboration, and bringing delightful
-        ideas to fruition.
+      <Text fontSize="md" fontFamily="Cousine" paddingBottom={{ md: 20 }}>
+        with a passion for collaboration, and bringing useful ideas to fruition.
+        Constantly looking to ask the right questions
       </Text>
     </Box>
     <Box
       display="flex"
       flexDirection="column"
-      justifyContent="flex start"
+      justifyContent="space-around"
       flexBasis={{ md: "30%" }}
       h={{ md: "90%" }}
     >
@@ -116,20 +138,19 @@ export const middleBox = (
         mb={5}
         fontFamily="Cousine, monospace"
         color="#ffa7c4"
+        textAlign="center"
       >
-        I'm a Business Analyst
+        Skills
       </Text>
-      <Text fontSize="sm" fontFamily="Cousine">
-        with experience in Needs Assessment, Planning, Requirement elicitation,
-        and Solution Evaluation. I am especially interested in providing useful
-        solutions, improving business processes and maintaining cost efficiency.
-      </Text>
+      <Flex wrap="wrap" justifyContent="space-between">
+        {skills.map((skill, i) => tag(skill.name, skill.tag, "blue", i))}
+      </Flex>
     </Box>
     <Box
       display="flex"
       flexDirection="column"
-      justifyContent={{ md: "flex-start", xs: "center" }}
-      w={{ md: "30%" }}
+      justifyContent={{ md: "space-around", xs: "center" }}
+      flexBasis={{ md: "30%" }}
       h={{ md: "90%" }}
     >
       <Text
@@ -139,11 +160,11 @@ export const middleBox = (
         mb={5}
         fontFamily="Cousine, monospace"
         color="#ffa7c4"
+        textAlign="center"
       >
-        Skills
+        Tools
       </Text>
-      <Flex wrap="wrap" justifyContent="space-evenly">
-        {skills.map((skill, i) => tag(skill.name, skill.tag, "blue", i))}
+      <Flex wrap="wrap" justifyContent="space-between">
         {baSkills.map((skill, i) => tag(skill.name, skill.tag, "red", i))}
       </Flex>
     </Box>
