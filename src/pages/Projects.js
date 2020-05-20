@@ -5,6 +5,7 @@ import pure from "../image/Frame_1.png";
 import book from "../image/book_spren.png";
 import lambda from "../image/lambda_door.png";
 import split from "../image/split.png";
+import chat from "../image/chat_rage.png";
 
 const Projects = () => {
   return (
@@ -19,11 +20,14 @@ const Projects = () => {
         display={{ md: "grid", xs: "flex" }}
         flexDirection={{ xs: "column" }}
         alignItems={{ xs: "center" }}
-        gridAutoColumns={{ md: "28% 28% 28%" }}
-        gridTemplateRows={{
-          md: "calc(2em * 10) calc(2em * 5) calc(2em * 5)",
-        }}
+        // gridAutoColumns={{ md: "28% 28% 28%" }}
+        gridAutoColumns={{ md: "auto auto auto" }}
+        gridAutoRows={{ md: "auto auto auto" }}
+        // gridTemplateRows={{
+        //   md: "calc(2em * 10) calc(2em * 5) calc(2em * 5)",
+        // }}
         gridGap={10}
+        padding={{ md: 20, xs: 5 }}
       >
         <PseudoBox
           w={{ xs: "80%", md: "100%" }}
@@ -38,6 +42,19 @@ const Projects = () => {
         >
           <Image src={pure} alt="pure-retail" />
           <Box mt={2} h={{ md: "30%" }} w={{ md: "100%" }}>
+            <Stack mt={2} spacing={4} isInline mb={3}>
+              {["React", "NodeJS", "MongoDB"].map((tech, i) => (
+                <Tag
+                  fontFamily="Cousine, monospace"
+                  bg="#ffecb2"
+                  size="sm"
+                  key={i}
+                  variantColor="gray"
+                >
+                  {tech}
+                </Tag>
+              ))}
+            </Stack>
             <Flex justifyContent="space-between">
               <Text fontFamily="Cousine, monospace">Pure Retail</Text>
               <Flex justifyContent="space-evenly" fontSize="25px" w="50%">
@@ -65,8 +82,23 @@ const Projects = () => {
                 </PseudoBox>
               </Flex>
             </Flex>
-            <Stack mt={2} spacing={4} isInline>
-              {["React", "NodeJS", "MongoDB"].map((tech, i) => (
+          </Box>
+        </PseudoBox>
+        <PseudoBox
+          w={{ xs: "80%", md: "100%" }}
+          mb={{ xs: 10 }}
+          gridColumn="2/3"
+          gridRow="1/2"
+          display="flex"
+          flexDirection="column"
+          justifyContent="center"
+          transition={{ md: "transform .2s" }}
+          _hover={{ transform: "scale(0.93)" }}
+        >
+          <Image src={lambda} alt="lambda-door" />
+          <Box mt={2} h={{ md: "30%" }} w={{ md: "100%" }}>
+            <Stack mt={2} spacing={4} isInline mb={3}>
+              {["React", "NodeJS", "PostGres"].map((tech, i) => (
                 <Tag
                   fontFamily="Cousine, monospace"
                   bg="#ffecb2"
@@ -78,21 +110,6 @@ const Projects = () => {
                 </Tag>
               ))}
             </Stack>
-          </Box>
-        </PseudoBox>
-        <PseudoBox
-          w={{ xs: "80%", md: "100%" }}
-          mb={{ xs: 10 }}
-          gridColumn="2/3"
-          gridRow="1/3"
-          display="flex"
-          flexDirection="column"
-          justifyContent="center"
-          transition={{ md: "transform .2s" }}
-          _hover={{ transform: "scale(0.93)" }}
-        >
-          <Image src={lambda} alt="lambda-door" />
-          <Box mt={2} h={{ md: "30%" }} w={{ md: "100%" }}>
             <Flex justifyContent="space-between">
               <Text fontFamily="Cousine, monospace">Lambda Door</Text>
               <Flex justifyContent="space-evenly" fontSize="25px" w="50%">
@@ -120,8 +137,23 @@ const Projects = () => {
                 </PseudoBox>
               </Flex>
             </Flex>
-            <Stack mt={2} spacing={4} isInline>
-              {["React", "NodeJS", "PostGres"].map((tech, i) => (
+          </Box>
+        </PseudoBox>
+        <PseudoBox
+          w={{ xs: "80%", md: "100%" }}
+          mb={{ xs: 10 }}
+          gridColumn="2/3"
+          gridRow="2/3"
+          display="flex"
+          flexDirection="column"
+          justifyContent="center"
+          transition={{ md: "transform .2s" }}
+          _hover={{ transform: "scale(0.93)" }}
+        >
+          <Image src={chat} alt="chat-rage" />
+          <Box mt={2} h={{ md: "30%" }} w={{ md: "100%" }}>
+            <Stack mt={2} spacing={4} isInline mb={3}>
+              {["React", "Firebase"].map((tech, i) => (
                 <Tag
                   fontFamily="Cousine, monospace"
                   bg="#ffecb2"
@@ -133,6 +165,33 @@ const Projects = () => {
                 </Tag>
               ))}
             </Stack>
+            <Flex justifyContent="space-between">
+              <Text fontFamily="Cousine, monospace">Chat Rage</Text>
+              <Flex justifyContent="space-evenly" fontSize="25px" w="50%">
+                <PseudoBox
+                  as="a"
+                  target="_blank"
+                  href="https://github.com/kip-guile/chat-rage"
+                  _hover={{
+                    color: "#ffa7c4",
+                    cursor: "pointer",
+                  }}
+                >
+                  <AiFillGithub />
+                </PseudoBox>
+                <PseudoBox
+                  as="a"
+                  target="_blank"
+                  href="https://chat-rage.web.app/"
+                  _hover={{
+                    color: "#ffa7c4",
+                    cursor: "pointer",
+                  }}
+                >
+                  <AiOutlineLink />
+                </PseudoBox>
+              </Flex>
+            </Flex>
           </Box>
         </PseudoBox>
         <PseudoBox
@@ -148,6 +207,19 @@ const Projects = () => {
         >
           <Image src={book} alt="book-spren" />
           <Box mt={2} h={{ md: "30%" }} w={{ md: "100%" }}>
+            <Stack mt={2} spacing={4} isInline mb={3}>
+              {["React", "NodeJS", "Firebase"].map((tech, i) => (
+                <Tag
+                  fontFamily="Cousine, monospace"
+                  bg="#ffecb2"
+                  size="sm"
+                  key={i}
+                  variantColor="gray"
+                >
+                  {tech}
+                </Tag>
+              ))}
+            </Stack>
             <Flex justifyContent="space-between">
               <Text fontFamily="Cousine, monospace">Book Spren</Text>
               <Flex justifyContent="space-evenly" fontSize="25px" w="50%">
@@ -175,19 +247,6 @@ const Projects = () => {
                 </PseudoBox>
               </Flex>
             </Flex>
-            <Stack mt={2} spacing={4} isInline>
-              {["React", "NodeJS", "Firebase"].map((tech, i) => (
-                <Tag
-                  fontFamily="Cousine, monospace"
-                  bg="#ffecb2"
-                  size="sm"
-                  key={i}
-                  variantColor="gray"
-                >
-                  {tech}
-                </Tag>
-              ))}
-            </Stack>
           </Box>
         </PseudoBox>
         <PseudoBox
@@ -203,6 +262,19 @@ const Projects = () => {
         >
           <Image src={split} alt="split-the-bill" />
           <Box mt={2} h={{ md: "30%" }} w={{ md: "100%" }}>
+            <Stack mt={2} spacing={4} isInline mb={3}>
+              {["React", "NodeJS", "PostGres"].map((tech, i) => (
+                <Tag
+                  fontFamily="Cousine, monospace"
+                  bg="#ffecb2"
+                  size="sm"
+                  key={i}
+                  variantColor="gray"
+                >
+                  {tech}
+                </Tag>
+              ))}
+            </Stack>
             <Flex justifyContent="space-between">
               <Text fontFamily="Cousine, monospace">Split the bill</Text>
               <Flex justifyContent="space-evenly" fontSize="25px" w="50%">
@@ -230,19 +302,6 @@ const Projects = () => {
                 </PseudoBox>
               </Flex>
             </Flex>
-            <Stack mt={2} spacing={4} isInline>
-              {["React", "NodeJS", "PostGres"].map((tech, i) => (
-                <Tag
-                  fontFamily="Cousine, monospace"
-                  bg="#ffecb2"
-                  size="sm"
-                  key={i}
-                  variantColor="gray"
-                >
-                  {tech}
-                </Tag>
-              ))}
-            </Stack>
           </Box>
         </PseudoBox>
       </Box>
