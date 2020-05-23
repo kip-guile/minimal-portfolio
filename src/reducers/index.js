@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 import { TOGGLE_DARK } from "../actions/types";
 
-const initialMode = true;
+const initialMode = false;
 
 const darkModeReducer = (state = initialMode, action) => {
   switch (action.type) {
