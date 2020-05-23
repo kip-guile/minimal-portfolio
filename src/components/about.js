@@ -47,7 +47,7 @@ const baSkills = [
   { tag: GiJesterHat, name: "Jest" },
   { tag: DiTravis, name: "TravisCI" },
   { tag: DiLinux, name: "Linux" },
-  { tag: BsGraphUp, name: "Requirement Management" },
+  // { tag: BsGraphUp, name: "Requirement Management" },
   { tag: BsGraphUp, name: "Elicitation" },
   { tag: BsGraphUp, name: "Quality Assurance" },
 ];
@@ -62,12 +62,12 @@ const tag = (name, Logo, color, key) => (
           marginRight: "5px",
         }}
       />
-      <TagLabel>{name}</TagLabel>
+      <TagLabel>{<p style={{ fontSize: "0.8em" }}>{name}</p>}</TagLabel>
     </Tag>
   </Box>
 );
 
-export const helloBox = () => {
+export const helloBox = (darkMode) => {
   return (
     <Box
       textAlign={{ xs: "center", md: "left" }}
@@ -76,13 +76,15 @@ export const helloBox = () => {
       display={{ md: "flex" }}
       justifyContent="center"
       alignItems="center"
-      borderBottom={{ md: "0.8em solid #ffecb2" }}
+      borderBottom={{
+        md: darkMode ? "0.8em solid #ffecb2" : "0.8em solid #282c35",
+      }}
     >
       <Text
         fontSize={{ md: "3xl", xs: "2xl" }}
         fontFamily="Cousine"
         fontWeight="bold"
-        color="#ffa7c4"
+        color={darkMode ? "#ffa7c4" : "dodgerblue"}
       >
         <ReactTypingEffect text="Hello, I'm Alexander Oguejiofor." />
       </Text>
@@ -90,22 +92,24 @@ export const helloBox = () => {
   );
 };
 
-export const middleBox = (
+export const middleBox = (darkMode) => (
   <Box
     textAlign={{ xs: "center", md: "left" }}
     display={{ md: "flex" }}
     justifyContent="space-between"
     alignItems="center"
-    borderBottom={{ md: "0.8em solid #ffecb2" }}
+    borderBottom={{
+      md: darkMode ? "0.8em solid #ffecb2" : "0.8em solid #282c35",
+    }}
     w="95%"
     p={{ md: 0, xs: 5 }}
-    minHeight={{ md: "27rem" }}
+    minHeight={{ md: "35rem" }}
   >
     <Box
       display="flex"
       flexDirection="column"
       justifyContent="space-around"
-      flexBasis={{ md: "31%" }}
+      flexBasis={{ md: "61%" }}
       h={{ md: "90%" }}
       p={1}
     >
@@ -114,71 +118,90 @@ export const middleBox = (
         fontWeight="bold"
         mt={5}
         mb={5}
-        color="#ffa7c4"
+        color={darkMode ? "#ffa7c4" : "dodgerblue"}
         fontFamily="Cousine, monospace"
-        textAlign="justify"
+        textAlign="center"
       >
         I'm a Full Stack Web Developer & Business Analyst
       </Text>
       <Text
-        fontSize={{ xs: "18px" }}
+        fontSize={{ md: "0.9em", xs: "18px" }}
         textAlign="justify"
         fontFamily="Cousine"
-        paddingBottom={{ md: 20 }}
+        marginBottom={{ xs: 5 }}
       >
-        with a passion for collaboration, and bringing useful ideas to fruition.
-        Constantly looking to ask the right questions
+        I recently completed Lambda school's Web Development program and have
+        been programming consistently for the past year.
       </Text>
-    </Box>
-    <Box
-      display="flex"
-      flexDirection="column"
-      justifyContent="space-around"
-      flexBasis={{ md: "30%" }}
-      h={{ md: "90%" }}
-      p={2}
-    >
       <Text
-        fontSize="lg"
-        fontWeight="bold"
-        mt={5}
-        mb={5}
-        fontFamily="Cousine, monospace"
-        color="#ffa7c4"
-        textAlign="center"
+        fontSize={{ md: "0.9em", xs: "18px" }}
+        textAlign="justify"
+        fontFamily="Cousine"
+        marginBottom={{ xs: 5 }}
       >
-        Skills
+        I am also a PMI certified Business Analyst and the skills I gathered
+        have come in handy while working on all projects, especially with
+        requirement management. At the moment, I'm looking to take the next step
+        in my development career.
       </Text>
-      <Flex wrap="wrap" justifyContent="space-between">
-        {skills.map((skill, i) => tag(skill.name, skill.tag, "blue", i))}
-      </Flex>
+      <Text
+        fontSize={{ md: "0.9em", xs: "18px" }}
+        textAlign="justify"
+        fontFamily="Cousine"
+        marginBottom={{ xs: 5 }}
+      >
+        I primarily use a PERN stack in my projects. However, I'm constantly
+        experimenting with other technoligies and building side projects with
+        them.
+      </Text>
+      <Text
+        fontSize={{ md: "0.9em", xs: "18px" }}
+        textAlign="justify"
+        fontFamily="Cousine"
+        marginBottom={{ xs: 5 }}
+      >
+        When I'm not coding or managing requirements, I most likely have my nose
+        in a book. I read a lot of fiction (80 -100 a year, a lot less now), and
+        it is my favorite past time activity. Feel free to follow me on
+        goodreads.
+      </Text>
+      <Text
+        fontSize={{ md: "0.9em", xs: "18px" }}
+        textAlign="justify"
+        fontFamily="Cousine"
+        marginBottom={{ xs: 5 }}
+      >
+        If you're still reading up to this point, odds are youre cool and/or
+        youre interested in what I can do. Reach out for a quick conversation.
+      </Text>
     </Box>
     <Box
       display="flex"
       flexDirection="column"
       justifyContent={{ md: "space-around", xs: "center" }}
-      flexBasis={{ md: "30%" }}
+      flexBasis={{ md: "33%" }}
       h={{ md: "90%" }}
     >
       <Text
         fontSize="lg"
         fontWeight="bold"
-        mt={5}
+        // mt={5}
         mb={5}
         fontFamily="Cousine, monospace"
-        color="#ffa7c4"
+        color={darkMode ? "#ffa7c4" : "dodgerblue"}
         textAlign="center"
       >
         Tools
       </Text>
       <Flex wrap="wrap" justifyContent="space-between">
+        {skills.map((skill, i) => tag(skill.name, skill.tag, "blue", i))}
         {baSkills.map((skill, i) => tag(skill.name, skill.tag, "red", i))}
       </Flex>
     </Box>
   </Box>
 );
 
-export const contactBox = (
+export const contactBox = (darkMode) => (
   <Box
     display="flex"
     flexDirection="column"
@@ -193,19 +216,19 @@ export const contactBox = (
       fontWeight="bold"
       mb={3}
       fontFamily="Cousine, monospace"
-      color="#ffa7c4"
+      color={darkMode ? "#ffa7c4" : "dodgerblue"}
     >
       Get in touch
     </Text>
     <PseudoBox
       _hover={{
-        color: "#ffa7c4",
-        borderBottom: "solid #ffa7c4 1px",
+        color: darkMode ? "#ffa7c4" : "dodgerblue",
+        borderBottom: darkMode ? "solid #ffa7c4 1px" : "solid dodgerblue 1px",
         cursor: "pointer",
       }}
       as="a"
       href="mailto:oguejioforalexander@gmail.com"
-      borderBottom="solid #ffecb2 1px"
+      borderBottom={darkMode ? "solid #ffecb2 1px" : "solid #282c35 1px"}
     >
       oguejioforalexander@gmail.com
     </PseudoBox>
@@ -214,20 +237,20 @@ export const contactBox = (
       width={{ md: "30%" }}
       justifyContent="flex-start"
       alignItems="center"
-      color="#282c35"
+      color={darkMode ? "#282c35" : "hsla(0,0%,100%,0.88)"}
     >
       <PseudoBox
         target="_blank"
         href="https://www.linkedin.com/in/alexanderoguejiofor/"
         as="a"
         _hover={{
-          backgroundColor: "#ffa7c4",
+          backgroundColor: darkMode ? "#ffa7c4" : "dodgerblue",
           cursor: "pointer",
         }}
         display="flex"
         p={3}
         borderRadius="50%"
-        bg="#ffecb2"
+        bg={darkMode ? "#ffecb2" : "#282c35"}
       >
         <AiFillLinkedin fontSize="2rem" />
       </PseudoBox>
@@ -236,7 +259,7 @@ export const contactBox = (
         href="https://www.goodreads.com/user/show/26479310-pokerface"
         as="a"
         _hover={{
-          backgroundColor: "#ffa7c4",
+          backgroundColor: darkMode ? "#ffa7c4" : "dodgerblue",
           cursor: "pointer",
         }}
         display="flex"
@@ -244,7 +267,7 @@ export const contactBox = (
         mr={5}
         p={3}
         borderRadius="50%"
-        bg="#ffecb2"
+        bg={darkMode ? "#ffecb2" : "#282c35"}
       >
         <FaGoodreads fontSize="2rem" />
       </PseudoBox>
@@ -253,13 +276,13 @@ export const contactBox = (
         href="https://github.com/kip-guile"
         as="a"
         _hover={{
-          backgroundColor: "#ffa7c4",
+          backgroundColor: darkMode ? "#ffa7c4" : "dodgerblue",
           cursor: "pointer",
         }}
         display="flex"
         p={3}
         borderRadius="50%"
-        bg="#ffecb2"
+        bg={darkMode ? "#ffecb2" : "#282c35"}
       >
         <AiFillGithub fontSize="2rem" />
       </PseudoBox>

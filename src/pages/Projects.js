@@ -1,11 +1,7 @@
 import React from "react";
-import { Box, Text, PseudoBox, Image, Tag, Stack, Flex } from "@chakra-ui/core";
-import { AiFillGithub, AiOutlineLink } from "react-icons/ai";
-import pure from "../image/Frame_1.png";
-import book from "../image/book_spren.png";
-import lambda from "../image/lambda_door.png";
-import split from "../image/split.png";
-import chat from "../image/chat_rage.png";
+import { Box, Text } from "@chakra-ui/core";
+import Project from "../components/projects";
+import { dump } from "../components/data";
 
 const Projects = () => {
   return (
@@ -13,297 +9,30 @@ const Projects = () => {
       width={{ md: "75%" }}
       overflowY={{ md: "auto" }}
       height={{ md: "100vh" }}
-      pt={{ md: "12rem" }}
+      pt={{ md: "7rem" }}
     >
       <Box
         w={{ xs: "100%", md: "100%" }}
         display={{ md: "grid", xs: "flex" }}
         flexDirection={{ xs: "column" }}
         alignItems={{ xs: "center" }}
-        // gridAutoColumns={{ md: "28% 28% 28%" }}
         gridAutoColumns={{ md: "auto auto auto" }}
         gridAutoRows={{ md: "auto auto auto" }}
-        // gridTemplateRows={{
-        //   md: "calc(2em * 10) calc(2em * 5) calc(2em * 5)",
-        // }}
         gridGap={10}
         padding={{ md: 20, xs: 5 }}
       >
-        <PseudoBox
-          w={{ xs: "80%", md: "100%" }}
-          mb={{ xs: 10 }}
-          display="flex"
-          flexDirection="column"
-          justifyContent="space-between"
-          gridColumn="1/2"
-          gridRow="1/2"
-          transition={{ md: "transform .2s" }}
-          _hover={{ transform: "scale(0.93)" }}
-        >
-          <Image src={pure} alt="pure-retail" />
-          <Box mt={2} h={{ md: "30%" }} w={{ md: "100%" }}>
-            <Stack mt={2} spacing={4} isInline mb={3}>
-              {["React", "NodeJS", "MongoDB"].map((tech, i) => (
-                <Tag
-                  fontFamily="Cousine, monospace"
-                  bg="#ffecb2"
-                  size="sm"
-                  key={i}
-                  variantColor="gray"
-                >
-                  {tech}
-                </Tag>
-              ))}
-            </Stack>
-            <Flex justifyContent="space-between">
-              <Text fontFamily="Cousine, monospace">Pure Retail</Text>
-              <Flex justifyContent="space-evenly" fontSize="25px" w="50%">
-                <PseudoBox
-                  as="a"
-                  target="_blank"
-                  href="https://github.com/LABS-EU3/shopping_cart_backend"
-                  _hover={{
-                    color: "#ffa7c4",
-                    cursor: "pointer",
-                  }}
-                >
-                  <AiFillGithub />
-                </PseudoBox>
-                <PseudoBox
-                  as="a"
-                  target="_blank"
-                  href="https://pure-retail.com/"
-                  _hover={{
-                    color: "#ffa7c4",
-                    cursor: "pointer",
-                  }}
-                >
-                  <AiOutlineLink />
-                </PseudoBox>
-              </Flex>
-            </Flex>
-          </Box>
-        </PseudoBox>
-        <PseudoBox
-          w={{ xs: "80%", md: "100%" }}
-          mb={{ xs: 10 }}
-          gridColumn="2/3"
-          gridRow="1/2"
-          display="flex"
-          flexDirection="column"
-          justifyContent="center"
-          transition={{ md: "transform .2s" }}
-          _hover={{ transform: "scale(0.93)" }}
-        >
-          <Image src={lambda} alt="lambda-door" />
-          <Box mt={2} h={{ md: "30%" }} w={{ md: "100%" }}>
-            <Stack mt={2} spacing={4} isInline mb={3}>
-              {["React", "NodeJS", "PostGres"].map((tech, i) => (
-                <Tag
-                  fontFamily="Cousine, monospace"
-                  bg="#ffecb2"
-                  size="sm"
-                  key={i}
-                  variantColor="gray"
-                >
-                  {tech}
-                </Tag>
-              ))}
-            </Stack>
-            <Flex justifyContent="space-between">
-              <Text fontFamily="Cousine, monospace">Lambda Door</Text>
-              <Flex justifyContent="space-evenly" fontSize="25px" w="50%">
-                <PseudoBox
-                  as="a"
-                  target="_blank"
-                  href="https://github.com/Labs-EU-Flex/lambda-door-client"
-                  _hover={{
-                    color: "#ffa7c4",
-                    cursor: "pointer",
-                  }}
-                >
-                  <AiFillGithub />
-                </PseudoBox>
-                <PseudoBox
-                  as="a"
-                  target="_blank"
-                  href="https://lambdadooreuflex.netlify.app/"
-                  _hover={{
-                    color: "#ffa7c4",
-                    cursor: "pointer",
-                  }}
-                >
-                  <AiOutlineLink />
-                </PseudoBox>
-              </Flex>
-            </Flex>
-          </Box>
-        </PseudoBox>
-        <PseudoBox
-          w={{ xs: "80%", md: "100%" }}
-          mb={{ xs: 10 }}
-          gridColumn="2/3"
-          gridRow="2/3"
-          display="flex"
-          flexDirection="column"
-          justifyContent="center"
-          transition={{ md: "transform .2s" }}
-          _hover={{ transform: "scale(0.93)" }}
-        >
-          <Image src={chat} alt="chat-rage" />
-          <Box mt={2} h={{ md: "30%" }} w={{ md: "100%" }}>
-            <Stack mt={2} spacing={4} isInline mb={3}>
-              {["React", "Firebase"].map((tech, i) => (
-                <Tag
-                  fontFamily="Cousine, monospace"
-                  bg="#ffecb2"
-                  size="sm"
-                  key={i}
-                  variantColor="gray"
-                >
-                  {tech}
-                </Tag>
-              ))}
-            </Stack>
-            <Flex justifyContent="space-between">
-              <Text fontFamily="Cousine, monospace">Chat Rage</Text>
-              <Flex justifyContent="space-evenly" fontSize="25px" w="50%">
-                <PseudoBox
-                  as="a"
-                  target="_blank"
-                  href="https://github.com/kip-guile/chat-rage"
-                  _hover={{
-                    color: "#ffa7c4",
-                    cursor: "pointer",
-                  }}
-                >
-                  <AiFillGithub />
-                </PseudoBox>
-                <PseudoBox
-                  as="a"
-                  target="_blank"
-                  href="https://chat-rage.web.app/"
-                  _hover={{
-                    color: "#ffa7c4",
-                    cursor: "pointer",
-                  }}
-                >
-                  <AiOutlineLink />
-                </PseudoBox>
-              </Flex>
-            </Flex>
-          </Box>
-        </PseudoBox>
-        <PseudoBox
-          w={{ xs: "80%", md: "100%" }}
-          mb={{ xs: 10 }}
-          gridColumn="3/4"
-          gridRow="1/2"
-          display="flex"
-          flexDirection="column"
-          justifyContent="center"
-          transition={{ md: "transform .2s" }}
-          _hover={{ transform: "scale(0.93)" }}
-        >
-          <Image src={book} alt="book-spren" />
-          <Box mt={2} h={{ md: "30%" }} w={{ md: "100%" }}>
-            <Stack mt={2} spacing={4} isInline mb={3}>
-              {["React", "NodeJS", "Firebase"].map((tech, i) => (
-                <Tag
-                  fontFamily="Cousine, monospace"
-                  bg="#ffecb2"
-                  size="sm"
-                  key={i}
-                  variantColor="gray"
-                >
-                  {tech}
-                </Tag>
-              ))}
-            </Stack>
-            <Flex justifyContent="space-between">
-              <Text fontFamily="Cousine, monospace">Book Spren</Text>
-              <Flex justifyContent="space-evenly" fontSize="25px" w="50%">
-                <PseudoBox
-                  as="a"
-                  target="_blank"
-                  href="https://github.com/kip-guile/Lit-spren"
-                  _hover={{
-                    color: "#ffa7c4",
-                    cursor: "pointer",
-                  }}
-                >
-                  <AiFillGithub />
-                </PseudoBox>
-                <PseudoBox
-                  as="a"
-                  target="_blank"
-                  href="https://book-spren.firebaseapp.com/login"
-                  _hover={{
-                    color: "#ffa7c4",
-                    cursor: "pointer",
-                  }}
-                >
-                  <AiOutlineLink />
-                </PseudoBox>
-              </Flex>
-            </Flex>
-          </Box>
-        </PseudoBox>
-        <PseudoBox
-          w={{ xs: "80%", md: "100%" }}
-          mb={{ xs: 10 }}
-          gridColumn="3/4"
-          gridRow="2/3"
-          display="flex"
-          flexDirection="column"
-          justifyContent="center"
-          transition={{ md: "transform .2s" }}
-          _hover={{ transform: "scale(0.93)" }}
-        >
-          <Image src={split} alt="split-the-bill" />
-          <Box mt={2} h={{ md: "30%" }} w={{ md: "100%" }}>
-            <Stack mt={2} spacing={4} isInline mb={3}>
-              {["React", "NodeJS", "PostGres"].map((tech, i) => (
-                <Tag
-                  fontFamily="Cousine, monospace"
-                  bg="#ffecb2"
-                  size="sm"
-                  key={i}
-                  variantColor="gray"
-                >
-                  {tech}
-                </Tag>
-              ))}
-            </Stack>
-            <Flex justifyContent="space-between">
-              <Text fontFamily="Cousine, monospace">Split the bill</Text>
-              <Flex justifyContent="space-evenly" fontSize="25px" w="50%">
-                <PseudoBox
-                  as="a"
-                  target="_blank"
-                  href="https://github.com/kip-guile/split-the-bill"
-                  _hover={{
-                    color: "#ffa7c4",
-                    cursor: "pointer",
-                  }}
-                >
-                  <AiFillGithub />
-                </PseudoBox>
-                <PseudoBox
-                  as="a"
-                  target="_blank"
-                  href="https://split-the-bill-six-alpha.now.sh/"
-                  _hover={{
-                    color: "#ffa7c4",
-                    cursor: "pointer",
-                  }}
-                >
-                  <AiOutlineLink />
-                </PseudoBox>
-              </Flex>
-            </Flex>
-          </Box>
-        </PseudoBox>
+        {dump.map((project, i) => (
+          <Project
+            gridColumn={project.gridColumn}
+            gridRow={project.gridRow}
+            src={project.src}
+            alt={project.alt}
+            arr={project.arr}
+            name={project.name}
+            github={project.github}
+            deployed={project.deployed}
+          />
+        ))}
       </Box>
       <Box>
         <Text m={5} fontFamily="Cousine, monospace" fontSize="xs">
