@@ -24,6 +24,7 @@ import {
 } from "react-icons/fa";
 import { BsGraphUp } from "react-icons/bs";
 import { GiJesterHat } from "react-icons/gi";
+import { bio } from "./data";
 
 const skills = [
   { tag: DiJavascript1, name: "JavaScript" },
@@ -65,6 +66,18 @@ const tag = (name, Logo, color, key) => (
       <TagLabel>{<p style={{ fontSize: "0.8em" }}>{name}</p>}</TagLabel>
     </Tag>
   </Box>
+);
+
+const paragraphs = (text, i) => (
+  <Text
+    key={i}
+    fontSize={{ md: "0.9em", xs: "18px" }}
+    textAlign="justify"
+    fontFamily="Cousine"
+    marginBottom={{ xs: 5 }}
+  >
+    {text}
+  </Text>
 );
 
 export const helloBox = (darkMode) => {
@@ -113,67 +126,9 @@ export const middleBox = (darkMode) => (
       h={{ md: "90%" }}
       p={1}
     >
-      <Text
-        fontSize="lg"
-        fontWeight="bold"
-        mt={5}
-        mb={5}
-        color={darkMode ? "#ffa7c4" : "dodgerblue"}
-        fontFamily="Cousine, monospace"
-        textAlign="center"
-      >
-        I'm a Full Stack Web Developer & Business Analyst
-      </Text>
-      <Text
-        fontSize={{ md: "0.9em", xs: "18px" }}
-        textAlign="justify"
-        fontFamily="Cousine"
-        marginBottom={{ xs: 5 }}
-      >
-        I recently completed Lambda school's Web Development program and have
-        been programming consistently for the past year.
-      </Text>
-      <Text
-        fontSize={{ md: "0.9em", xs: "18px" }}
-        textAlign="justify"
-        fontFamily="Cousine"
-        marginBottom={{ xs: 5 }}
-      >
-        I am also a PMI certified Business Analyst and the skills I gathered
-        have come in handy while working on all projects, especially with
-        requirement management. At the moment, I'm looking to take the next step
-        in my development career.
-      </Text>
-      <Text
-        fontSize={{ md: "0.9em", xs: "18px" }}
-        textAlign="justify"
-        fontFamily="Cousine"
-        marginBottom={{ xs: 5 }}
-      >
-        I primarily use a PERN stack in my projects. However, I'm constantly
-        experimenting with other technoligies and building side projects with
-        them.
-      </Text>
-      <Text
-        fontSize={{ md: "0.9em", xs: "18px" }}
-        textAlign="justify"
-        fontFamily="Cousine"
-        marginBottom={{ xs: 5 }}
-      >
-        When I'm not coding or managing requirements, I most likely have my nose
-        in a book. I read a lot of fiction (80 -100 a year, a lot less now), and
-        it is my favorite past time activity. Feel free to follow me on
-        goodreads.
-      </Text>
-      <Text
-        fontSize={{ md: "0.9em", xs: "18px" }}
-        textAlign="justify"
-        fontFamily="Cousine"
-        marginBottom={{ xs: 5 }}
-      >
-        If you're still reading up to this point, odds are youre cool and/or
-        youre interested in what I can do. Reach out for a quick conversation.
-      </Text>
+      {bio.map((bio, i) => {
+        return paragraphs(bio, i);
+      })}
     </Box>
     <Box
       display="flex"
