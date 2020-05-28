@@ -5,7 +5,7 @@ import { logoBox, navLinks, nameBox } from "./header";
 import { GiLightBulb, GiCandleLight } from "react-icons/gi";
 import { toggleDark } from "../actions";
 
-const HeaderComponent = ({ toggleDark, darkMode }) => {
+const HeaderComponent = ({ toggleDark, darkMode, page }) => {
   return (
     <Box
       display={{ md: "flex" }}
@@ -17,7 +17,7 @@ const HeaderComponent = ({ toggleDark, darkMode }) => {
     >
       {logoBox(darkMode)}
       {nameBox(darkMode)}
-      {navLinks(darkMode)}
+      {navLinks(darkMode, page)}
       <Box pb={5}>
         <Button
           onClick={toggleDark}

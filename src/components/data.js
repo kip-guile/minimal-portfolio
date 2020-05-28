@@ -1,3 +1,5 @@
+import React from "react";
+import { Text, Link } from "@chakra-ui/core";
 import pure from "../image/pure-ret.png";
 import book from "../image/book_spren.png";
 import lambda from "../image/lambda_door.png";
@@ -57,10 +59,10 @@ export const dump = [
   },
 ];
 
-export const bio = [
-  "I recently completed Lambda school's Web Development program and have been programming consistently for the past year.",
-  "I am also a PMI certified Business Analyst and the skills I gathered have come in handy while working on all projects, especially with requirement management.At the moment, I'm looking to take the next step in my development career.",
-  "I primarily use a PERN stack in my projects. However, I'm constantly experimenting with other technoligies and building side projects with them.",
-  "When I'm not coding or managing requirements, I most likely have my nose in a book.I read a lot of fiction(80 - 100 a year, a lot less now), and it is my favorite past time activity.Feel free to follow me on goodreads.",
-  "If you're still reading up to this point, odds are youre cool and / or youre interested in what I can do.Reach out for a quick conversation.",
+export const bio = () => [
+  `I'm Alex. I recently completed Lambda School's Web Development program and have been programming consistently for the past year.`,
+  "Most of my work day to day is in React/Redux/Node architecture with specialization in state management paradigms.",
+  "I am also a PMI certified Business Analyst and the skills I acquired have come in handy with managing requirements on all projects.",
+  "I love to read fiction, and I write reviews about some of the books I read.",
+  "If you're still reading up to this point, odds are you're cool and / or you're interested in what I can do. Happy to have a conversation. Please reach out",
 ];

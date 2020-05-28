@@ -10,7 +10,7 @@ export const logoBox = (darkMode) => (
   <Box
     w={{ md: "75%", xs: "100%" }}
     h={{ md: "13em", xs: "10em" }}
-    display="flex"
+    display={{ md: "flex", xs: "none" }}
     justifyContent="center"
     alignItems="center"
     borderBottom={{
@@ -41,17 +41,17 @@ export const nameBox = (darkMode) => (
   >
     <Text
       color={darkMode ? "#ffa7c4" : "dodgerblue"}
-      fontSize="lg"
+      fontSize={{ md: "lg", xs: "25px" }}
       fontWeight="bold"
       mb={5}
-      fontFamily="Cousine, monospace"
+      fontFamily="Lato, sans-serif"
     >
       Alexander Oguejiofor
     </Text>
     <Text
       textAlign={{ md: "center", xs: "justify" }}
       fontSize={{ md: "1em", xs: "18px" }}
-      fontFamily="Cousine"
+      fontFamily="Crimson Text, serif"
     >
       Web Developer & Business Analyst
     </Text>
@@ -59,55 +59,70 @@ export const nameBox = (darkMode) => (
       <IconContext.Provider value={{ className: "react-icon" }}>
         <MdLocationOn style={{ fontSize: "1.2em", marginRight: "10px" }} />
       </IconContext.Provider>
-      <Text fontSize={{ md: "1em", xs: "18px" }} fontFamily="Cousine">
+      <Text
+        fontSize={{ md: "1em", xs: "18px" }}
+        fontFamily="Crimson Text, serif"
+      >
         Lagos, NG
       </Text>
     </Flex>
   </Box>
 );
-export const navLinks = (darkMode) => (
+export const navLinks = (darkMode, page) => (
   <Flex
     mt={2}
     mb={{ xs: 10 }}
-    fontFamily="Cousine, monospace"
+    fontFamily="Crimson Text, serif"
     justifyContent={{ xs: "center" }}
   >
-    <NavLink to="/projects">
-      <PseudoBox
-        as="a"
-        borderBottom={darkMode ? "solid #ffecb2 1px" : "solid #282c35 1px"}
-        fontSize={{ xs: "18px" }}
-        _active={{
-          color: darkMode ? "#ffa7c4" : "dodgerblue",
-          borderBottom: darkMode ? "solid #ffa7c4 1px" : "solid dodgerblue 1px",
-        }}
-        _hover={{
-          color: darkMode ? "#ffa7c4" : "dodgerblue",
-          borderBottom: darkMode ? "solid #ffa7c4 1px" : "solid dodgerblue 1px",
-        }}
-      >
-        PROJECTS
-      </PseudoBox>
-    </NavLink>
-    <Text ml={4} mr={4} fontSize="sm">
+    {page === "about" ? (
+      <NavLink to="/projects">
+        <PseudoBox
+          as="a"
+          borderBottom={darkMode ? "solid #ffecb2 1px" : "solid #282c35 1px"}
+          fontSize={{ xs: "18px" }}
+          _active={{
+            color: darkMode ? "#ffa7c4" : "dodgerblue",
+            borderBottom: darkMode
+              ? "solid #ffa7c4 1px"
+              : "solid dodgerblue 1px",
+          }}
+          _hover={{
+            color: darkMode ? "#ffa7c4" : "dodgerblue",
+            borderBottom: darkMode
+              ? "solid #ffa7c4 1px"
+              : "solid dodgerblue 1px",
+          }}
+        >
+          MY PROJECTS
+        </PseudoBox>
+      </NavLink>
+    ) : (
+      <NavLink to="/">
+        <PseudoBox
+          fontSize={{ xs: "18px" }}
+          as="a"
+          borderBottom={darkMode ? "solid #ffecb2 1px" : "solid #282c35 1px"}
+          _active={{
+            color: darkMode ? "#ffa7c4" : "dodgerblue",
+            borderBottom: darkMode
+              ? "solid #ffa7c4 1px"
+              : "solid dodgerblue 1px",
+          }}
+          _hover={{
+            color: darkMode ? "#ffa7c4" : "dodgerblue",
+            borderBottom: darkMode
+              ? "solid #ffa7c4 1px"
+              : "solid dodgerblue 1px",
+          }}
+        >
+          ABOUT ME
+        </PseudoBox>{" "}
+      </NavLink>
+    )}
+
+    {/* <Text ml={4} mr={4} fontSize="sm">
       /
-    </Text>
-    <NavLink to="/">
-      <PseudoBox
-        fontSize={{ xs: "18px" }}
-        as="a"
-        borderBottom={darkMode ? "solid #ffecb2 1px" : "solid #282c35 1px"}
-        _active={{
-          color: darkMode ? "#ffa7c4" : "dodgerblue",
-          borderBottom: darkMode ? "solid #ffa7c4 1px" : "solid dodgerblue 1px",
-        }}
-        _hover={{
-          color: darkMode ? "#ffa7c4" : "dodgerblue",
-          borderBottom: darkMode ? "solid #ffa7c4 1px" : "solid dodgerblue 1px",
-        }}
-      >
-        ABOUT
-      </PseudoBox>{" "}
-    </NavLink>
+    </Text> */}
   </Flex>
 );

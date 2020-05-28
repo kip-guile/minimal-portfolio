@@ -71,9 +71,9 @@ const tag = (name, Logo, color, key) => (
 const paragraphs = (text, i) => (
   <Text
     key={i}
-    fontSize={{ md: "0.9em", xs: "18px" }}
+    fontSize={{ md: "18px", xs: "16px" }}
     textAlign="justify"
-    fontFamily="Cousine"
+    fontFamily="Crimson Text, serif"
     marginBottom={{ xs: 5 }}
   >
     {text}
@@ -86,7 +86,7 @@ export const helloBox = (darkMode) => {
       textAlign={{ xs: "center", md: "left" }}
       width="95%"
       minHeight={{ md: "13rem" }}
-      display={{ md: "flex" }}
+      display={{ md: "flex", xs: "none" }}
       justifyContent="center"
       alignItems="center"
       borderBottom={{
@@ -95,11 +95,11 @@ export const helloBox = (darkMode) => {
     >
       <Text
         fontSize={{ md: "3xl", xs: "2xl" }}
-        fontFamily="Cousine"
+        fontFamily="Lato, sans-serif"
         fontWeight="bold"
         color={darkMode ? "#ffa7c4" : "dodgerblue"}
       >
-        <ReactTypingEffect text="Hello, I'm Alexander Oguejiofor." />
+        <ReactTypingEffect text="Alexander Oguejiofor" />
       </Text>
     </Box>
   );
@@ -109,7 +109,7 @@ export const middleBox = (darkMode) => (
   <Box
     textAlign={{ xs: "center", md: "left" }}
     display={{ md: "flex" }}
-    justifyContent="space-between"
+    justifyContent="center"
     alignItems="center"
     borderBottom={{
       md: darkMode ? "0.8em solid #ffecb2" : "0.8em solid #282c35",
@@ -118,23 +118,11 @@ export const middleBox = (darkMode) => (
     p={{ md: 0, xs: 5 }}
     minHeight={{ md: "35rem" }}
   >
-    <Box
-      display="flex"
-      flexDirection="column"
-      justifyContent="space-around"
-      flexBasis={{ md: "61%" }}
-      h={{ md: "90%" }}
-      p={1}
-    >
-      {bio.map((bio, i) => {
-        return paragraphs(bio, i);
-      })}
-    </Box>
-    <Box
+    {/* <Box
       display="flex"
       flexDirection="column"
       justifyContent={{ md: "space-around", xs: "center" }}
-      flexBasis={{ md: "33%" }}
+      flexBasis={{ md: "15%" }}
       h={{ md: "90%" }}
     >
       <Text
@@ -152,13 +140,49 @@ export const middleBox = (darkMode) => (
         {skills.map((skill, i) => tag(skill.name, skill.tag, "blue", i))}
         {baSkills.map((skill, i) => tag(skill.name, skill.tag, "red", i))}
       </Flex>
+    </Box> */}
+    <Box
+      display="flex"
+      flexDirection="column"
+      justifyContent="space-around"
+      flexBasis={{ md: "60%" }}
+      h={{ md: "90%" }}
+      p={1}
+    >
+      {bio().map((bio, i) => {
+        return paragraphs(bio, i);
+      })}
     </Box>
+    {/* <Box
+      display="flex"
+      flexDirection="column"
+      justifyContent={{ md: "space-around", xs: "center" }}
+      flexBasis={{ md: "15%" }}
+      h={{ md: "90%" }}
+    >
+      <Text
+        fontSize="lg"
+        fontWeight="bold"
+        // mt={5}
+        mb={5}
+        fontFamily="Cousine, monospace"
+        color={darkMode ? "#ffa7c4" : "dodgerblue"}
+        textAlign="center"
+      >
+        Tools
+      </Text>
+      <Flex wrap="wrap" justifyContent="space-between">
+        {skills.map((skill, i) => tag(skill.name, skill.tag, "blue", i))}
+        {baSkills.map((skill, i) => tag(skill.name, skill.tag, "red", i))}
+      </Flex>
+    </Box> */}
   </Box>
 );
 
 export const contactBox = (darkMode) => (
   <Box
     display="flex"
+    p={5}
     flexDirection="column"
     justifyContent="center"
     alignItems={{ md: "flex-start", xs: "center" }}
@@ -169,78 +193,127 @@ export const contactBox = (darkMode) => (
     <Text
       fontSize="lg"
       fontWeight="bold"
-      mb={3}
-      fontFamily="Cousine, monospace"
+      mb={6}
+      mt={1}
+      fontFamily="Lato, sans-serif"
       color={darkMode ? "#ffa7c4" : "dodgerblue"}
     >
       Get in touch
     </Text>
-    <PseudoBox
-      _hover={{
-        color: darkMode ? "#ffa7c4" : "dodgerblue",
-        borderBottom: darkMode ? "solid #ffa7c4 1px" : "solid dodgerblue 1px",
-        cursor: "pointer",
-      }}
-      as="a"
-      href="mailto:oguejioforalexander@gmail.com"
-      borderBottom={darkMode ? "solid #ffecb2 1px" : "solid #282c35 1px"}
+    <Box
+      display={{ md: "flex" }}
+      w="100%"
+      justifyContent={{ md: "space-between" }}
+      textAlign={{ md: "justify", xs: "center" }}
     >
-      oguejioforalexander@gmail.com
-    </PseudoBox>
-    <Flex
-      mt={4}
-      width={{ md: "30%" }}
-      justifyContent="flex-start"
-      alignItems="center"
-      color={darkMode ? "#282c35" : "hsla(0,0%,100%,0.88)"}
-    >
-      <PseudoBox
-        target="_blank"
-        href="https://www.linkedin.com/in/alexanderoguejiofor/"
-        as="a"
-        _hover={{
-          backgroundColor: darkMode ? "#ffa7c4" : "dodgerblue",
-          cursor: "pointer",
-        }}
-        display="flex"
-        p={3}
-        borderRadius="50%"
-        bg={darkMode ? "#ffecb2" : "#282c35"}
+      <Box>
+        <Text
+          fontSize={{ md: "18px", xs: "16px" }}
+          mb={4}
+          fontFamily="Crimson Text, serif"
+        >
+          You can email me at
+          <PseudoBox
+            ml={2}
+            _hover={{
+              color: darkMode ? "#ffa7c4" : "dodgerblue",
+              borderBottom: darkMode
+                ? "solid #ffa7c4 1px"
+                : "solid dodgerblue 1px",
+              cursor: "pointer",
+            }}
+            as="a"
+            href="mailto:oguejioforalexander@gmail.com"
+            borderBottom={darkMode ? "solid #ffecb2 1px" : "solid #282c35 1px"}
+          >
+            oguejioforalexander@gmail.com
+          </PseudoBox>
+        </Text>
+        <Text
+          fontSize={{ md: "18px", xs: "16px" }}
+          mb={4}
+          fontFamily="Crimson Text, serif"
+        >
+          I'm on Twitter at
+          <PseudoBox
+            ml={2}
+            _hover={{
+              color: darkMode ? "#ffa7c4" : "dodgerblue",
+              borderBottom: darkMode
+                ? "solid #ffa7c4 1px"
+                : "solid dodgerblue 1px",
+              cursor: "pointer",
+            }}
+            as="a"
+            href="mailto:oguejioforalexander@gmail.com"
+            borderBottom={darkMode ? "solid #ffecb2 1px" : "solid #282c35 1px"}
+          >
+            @master_elodin
+          </PseudoBox>
+        </Text>
+        <Text
+          fontSize={{ md: "18px", xs: "16px" }}
+          mb={4}
+          fontFamily="Crimson Text, serif"
+        >
+          You can see what I've been reading at
+          <PseudoBox
+            ml={2}
+            _hover={{
+              color: darkMode ? "#ffa7c4" : "dodgerblue",
+              borderBottom: darkMode
+                ? "solid #ffa7c4 1px"
+                : "solid dodgerblue 1px",
+              cursor: "pointer",
+            }}
+            as="a"
+            href="https://www.goodreads.com/user/show/26479310-pokerface"
+            borderBottom={darkMode ? "solid #ffecb2 1px" : "solid #282c35 1px"}
+          >
+            Goodreads
+          </PseudoBox>
+        </Text>
+      </Box>
+      <Flex
+        mt={{ md: 4, xs: 8 }}
+        mb={{ xs: 4 }}
+        width={{ md: "30%" }}
+        justifyContent={{ md: "flex-start", xs: "center" }}
+        alignItems="center"
+        color={darkMode ? "#282c35" : "hsla(0,0%,100%,0.88)"}
       >
-        <AiFillLinkedin fontSize="2rem" />
-      </PseudoBox>
-      <PseudoBox
-        target="_blank"
-        href="https://www.goodreads.com/user/show/26479310-pokerface"
-        as="a"
-        _hover={{
-          backgroundColor: darkMode ? "#ffa7c4" : "dodgerblue",
-          cursor: "pointer",
-        }}
-        display="flex"
-        ml={5}
-        mr={5}
-        p={3}
-        borderRadius="50%"
-        bg={darkMode ? "#ffecb2" : "#282c35"}
-      >
-        <FaGoodreads fontSize="2rem" />
-      </PseudoBox>
-      <PseudoBox
-        target="_blank"
-        href="https://github.com/kip-guile"
-        as="a"
-        _hover={{
-          backgroundColor: darkMode ? "#ffa7c4" : "dodgerblue",
-          cursor: "pointer",
-        }}
-        display="flex"
-        p={3}
-        borderRadius="50%"
-        bg={darkMode ? "#ffecb2" : "#282c35"}
-      >
-        <AiFillGithub fontSize="2rem" />
-      </PseudoBox>
-    </Flex>
+        <PseudoBox
+          target="_blank"
+          href="https://www.linkedin.com/in/alexanderoguejiofor/"
+          as="a"
+          _hover={{
+            backgroundColor: darkMode ? "#ffa7c4" : "dodgerblue",
+            cursor: "pointer",
+          }}
+          display="flex"
+          p={3}
+          borderRadius="50%"
+          bg={darkMode ? "#ffecb2" : "#282c35"}
+        >
+          <AiFillLinkedin fontSize="2rem" />
+        </PseudoBox>
+        <PseudoBox
+          target="_blank"
+          href="https://github.com/kip-guile"
+          as="a"
+          _hover={{
+            backgroundColor: darkMode ? "#ffa7c4" : "dodgerblue",
+            cursor: "pointer",
+          }}
+          display="flex"
+          ml={5}
+          p={3}
+          borderRadius="50%"
+          bg={darkMode ? "#ffecb2" : "#282c35"}
+        >
+          <AiFillGithub fontSize="2rem" />
+        </PseudoBox>
+      </Flex>
+    </Box>
   </Box>
 );
