@@ -120,9 +120,5 @@ export const navLinks = (darkMode, page) => (
         </PseudoBox>{" "}
       </NavLink>
     )}
-
-    {/* <Text ml={4} mr={4} fontSize="sm">
-      /
-    </Text> */}
   </Flex>
 );

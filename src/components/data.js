@@ -1,5 +1,3 @@
-import React from "react";
-import { Text, Link } from "@chakra-ui/core";
 import pure from "../image/pure-ret.png";
 import book from "../image/book_spren.png";
 import lambda from "../image/lambda_door.png";
