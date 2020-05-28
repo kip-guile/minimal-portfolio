@@ -28,7 +28,7 @@ const Project = ({
       <Stack mt={2} spacing={4} isInline mb={3}>
         {arr.map((tech, i) => (
           <Tag
-            fontFamily="Cousine, monospace"
+            fontFamily="Crimson Text, serif"
             bg="#ffecb2"
             size="sm"
             key={i}
@@ -39,7 +39,7 @@ const Project = ({
         ))}
       </Stack>
       <Flex justifyContent="space-between">
-        <Text fontFamily="Cousine, monospace">{name}</Text>
+        <Text fontFamily="Crimson Text, serif">{name}</Text>
         <Flex justifyContent="space-evenly" fontSize="25px" w="50%">
           <PseudoBox
             as="a"
