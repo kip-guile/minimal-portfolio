@@ -1,5 +1,5 @@
 import React from "react"
-import { PseudoBox, Image, Box, Stack, Flex, Tag, Text } from "@chakra-ui/core"
+import { PseudoBox, Image, Box, Stack, Flex, Tag } from "@chakra-ui/core"
 import { AiFillGithub, AiOutlineLink } from "react-icons/ai"
 import { NavLink } from "react-router-dom"
 

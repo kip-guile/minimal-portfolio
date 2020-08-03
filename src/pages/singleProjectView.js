@@ -1,10 +1,11 @@
 import React from "react"
 import { connect } from "react-redux"
-import { Box, Text, Image, PseudoBox, Flex } from "@chakra-ui/core"
+import { Box, Text, Image, PseudoBox, Flex, Button } from "@chakra-ui/core"
 import { AiFillGithub, AiOutlineLink } from "react-icons/ai"
+import { IoIosArrowBack } from "react-icons/io"
 import { projectDump } from "../components/data"
 
-const SingleProject = ({ match, darkMode }) => {
+const SingleProject = ({ match, history, darkMode }) => {
   const projectName = match.params.project
   const projectFile = projectDump.filter(
     (project) => project.alt === projectName
@@ -16,6 +17,14 @@ const SingleProject = ({ match, darkMode }) => {
       height={{ md: "100vh" }}
       pt={{ md: "7rem" }}
     >
+      <Button
+        onClick={() => history.goBack()}
+        leftIcon={IoIosArrowBack}
+        variantColor={darkMode ? "#ffa7c4" : "#00BF86"}
+        variant="outline"
+      >
+        Back
+      </Button>
       <Box
         w={{ xs: "100%", md: "100%" }}
         display="flex"
