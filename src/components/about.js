@@ -47,7 +47,7 @@ export const helloBox = (darkMode) => {
         fontSize={{ md: "3xl", xs: "2xl" }}
         fontFamily="Lato, sans-serif"
         fontWeight="bold"
-        color={darkMode ? "#ffa7c4" : "dodgerblue"}
+        color={darkMode ? "#ffa7c4" : "#00BF86"}
       >
         Hello, I am
         <ReactTypingEffect text=" Alexander Oguejiofor" />
@@ -73,6 +73,7 @@ export const middleBox = (darkMode) => (
     <Box
       display="flex"
       flexDirection="column"
+      alignItems="center"
       justifyContent="space-around"
       flexBasis={{ md: "30%" }}
       w={{ md: "50%" }}
@@ -81,14 +82,17 @@ export const middleBox = (darkMode) => (
     >
       <PseudoBox
         w={{ xs: "80%", md: "100%" }}
-        mb={{ md: 0, xs: 10 }}
         display="flex"
         flexDirection="column"
         justifyContent="center"
+        alignItems="center"
       >
         <Image
-          fallbackSrc="https://via.placeholder.com/400"
-          size="400px"
+          fallbackSrc={{
+            md: "https://via.placeholder.com/400",
+            xs: "https://via.placeholder.com/250",
+          }}
+          size={{ md: "400px", xs: "200px" }}
           src={avatar}
           alt="avatar"
         />
@@ -127,7 +131,7 @@ export const contactBox = (darkMode) => (
       mb={{ md: 0, xs: 6 }}
       mt={1}
       fontFamily="Lato, sans-serif"
-      color={darkMode ? "#ffa7c4" : "dodgerblue"}
+      color={darkMode ? "#ffa7c4" : "#00BF86"}
       display="flex"
       alignItems="center"
       justifyContent="center"
@@ -164,7 +168,7 @@ export const contactBox = (darkMode) => (
             transition: { duration: 0.8 },
           }}
           _hover={{
-            backgroundColor: darkMode ? "#ffa7c4" : "dodgerblue",
+            backgroundColor: darkMode ? "#ffa7c4" : "#00BF86",
             cursor: "pointer",
           }}
           display="flex"

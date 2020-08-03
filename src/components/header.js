@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 import { Box, Text, Flex, Image, PseudoBox } from "@chakra-ui/core"
 import { NavLink } from "react-router-dom"
 import logo from "../image/pink_logo.png"
-import redlogo from "../image/redlogo.png"
+import dark_logo from "../image/dark_logo.png"
 import { MdLocationOn } from "react-icons/md"
 import { IconContext } from "react-icons"
 
@@ -30,7 +30,7 @@ export const logoBox = (darkMode) => (
     <Image
       w={{ md: "70%", xs: "50%" }}
       rounded="lg"
-      src={darkMode ? logo : redlogo}
+      src={darkMode ? logo : dark_logo}
       alt="alexander"
       display="flex"
     />
@@ -49,7 +49,7 @@ export const nameBox = (darkMode) => (
     }}
   >
     <Text
-      color={darkMode ? "#ffa7c4" : "dodgerblue"}
+      color={darkMode ? "#ffa7c4" : "#00BF86"}
       fontSize={{ md: "lg", xs: "25px" }}
       fontWeight="bold"
       mb={5}
@@ -91,16 +91,12 @@ export const navLinks = (darkMode, page) => (
           borderBottom={darkMode ? "solid #ffecb2 1px" : "solid #282c35 1px"}
           fontSize={{ xs: "18px" }}
           _active={{
-            color: darkMode ? "#ffa7c4" : "dodgerblue",
-            borderBottom: darkMode
-              ? "solid #ffa7c4 1px"
-              : "solid dodgerblue 1px",
+            color: darkMode ? "#ffa7c4" : "#00BF86",
+            borderBottom: darkMode ? "solid #ffa7c4 1px" : "solid #00BF86 1px",
           }}
           _hover={{
-            color: darkMode ? "#ffa7c4" : "dodgerblue",
-            borderBottom: darkMode
-              ? "solid #ffa7c4 1px"
-              : "solid dodgerblue 1px",
+            color: darkMode ? "#ffa7c4" : "#00BF86",
+            borderBottom: darkMode ? "solid #ffa7c4 1px" : "solid #00BF86 1px",
           }}
         >
           MY PROJECTS
@@ -113,16 +109,12 @@ export const navLinks = (darkMode, page) => (
           as="a"
           borderBottom={darkMode ? "solid #ffecb2 1px" : "solid #282c35 1px"}
           _active={{
-            color: darkMode ? "#ffa7c4" : "dodgerblue",
-            borderBottom: darkMode
-              ? "solid #ffa7c4 1px"
-              : "solid dodgerblue 1px",
+            color: darkMode ? "#ffa7c4" : "#00BF86",
+            borderBottom: darkMode ? "solid #ffa7c4 1px" : "solid #00BF86 1px",
           }}
           _hover={{
-            color: darkMode ? "#ffa7c4" : "dodgerblue",
-            borderBottom: darkMode
-              ? "solid #ffa7c4 1px"
-              : "solid dodgerblue 1px",
+            color: darkMode ? "#ffa7c4" : "#00BF86",
+            borderBottom: darkMode ? "solid #ffa7c4 1px" : "solid #00BF86 1px",
           }}
         >
           ABOUT ME
