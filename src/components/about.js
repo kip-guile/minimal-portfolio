@@ -1,10 +1,12 @@
 import React from "react"
-import { Box, Text, Flex, PseudoBox } from "@chakra-ui/core"
+import { Box, Text, Flex, PseudoBox, Image } from "@chakra-ui/core"
 import { contact } from "./data"
 import { motion } from "framer-motion"
 import ReactTypingEffect from "react-typing-effect"
 import { bio } from "./data"
 import useIcon from "./customHooks"
+
+import avatar from "../image/avatar.png"
 
 const MotionFlex = motion.custom(Flex)
 const MotionPseudoBox = motion.custom(PseudoBox)
@@ -58,6 +60,7 @@ export const middleBox = (darkMode) => (
   <Box
     textAlign={{ xs: "center", md: "left" }}
     display={{ md: "flex" }}
+    flexDirection={{ md: "column" }}
     justifyContent="center"
     alignItems="center"
     borderBottom={{
@@ -65,15 +68,40 @@ export const middleBox = (darkMode) => (
     }}
     w="95%"
     p={{ md: 0, xs: 5 }}
-    minHeight={{ md: "35rem" }}
+    minHeight={{ md: "55rem" }}
   >
     <Box
       display="flex"
       flexDirection="column"
       justifyContent="space-around"
-      flexBasis={{ md: "60%" }}
-      h={{ md: "90%" }}
+      flexBasis={{ md: "30%" }}
+      w={{ md: "50%" }}
       p={1}
+      // bg="#fff3"
+    >
+      <PseudoBox
+        w={{ xs: "80%", md: "100%" }}
+        mb={{ md: 0, xs: 10 }}
+        display="flex"
+        flexDirection="column"
+        justifyContent="center"
+      >
+        <Image
+          fallbackSrc="https://via.placeholder.com/400"
+          size="400px"
+          src={avatar}
+          alt="avatar"
+        />
+      </PseudoBox>
+    </Box>
+    <Box
+      display="flex"
+      flexDirection="column"
+      justifyContent="space-around"
+      flexBasis={{ md: "55%" }}
+      w={{ md: "60%" }}
+      p={1}
+      // bg="#fff5"
     >
       {bio().map((bio, i) => {
         return paragraphs(bio, i)
@@ -96,7 +124,7 @@ export const contactBox = (darkMode) => (
       fontSize="lg"
       fontWeight="bold"
       textAlign="center"
-      mb={6}
+      mb={{ md: 0, xs: 6 }}
       mt={1}
       fontFamily="Lato, sans-serif"
       color={darkMode ? "#ffa7c4" : "dodgerblue"}
@@ -110,7 +138,7 @@ export const contactBox = (darkMode) => (
 
     <MotionFlex
       mt={{ md: 4 }}
-      mb={{ xs: 4 }}
+      mb={{ md: 1, xs: 4 }}
       animate={{ x: [100, -50, 0] }}
       transition={{
         ease: "easeOut",
