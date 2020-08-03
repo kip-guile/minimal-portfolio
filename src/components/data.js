@@ -57,14 +57,6 @@ export const dump = [
   },
 ]
 
-export const bio = () => [
-  `I'm Alex. I recently completed Lambda School's Web Development program and have been programming consistently for the past year.`,
-  "Most of my work day to day is in React/Redux/Node architecture with specialization in state management paradigms.",
-  "I am also a PMI certified Business Analyst and the skills I acquired have come in handy with managing requirements on all projects.",
-  "I love to read fiction, and I write reviews about some of the books I read.",
-  "If you're still reading up to this point, odds are you're interesting and / or you're interested in what I can do. Happy to have a conversation. Please reach out",
-]
-
 export const contact = [
   { name: "email", url: "mailto:oguejioforalexander@gmail.com" },
   { name: "github", url: "https://github.com/kip-guile" },

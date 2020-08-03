@@ -1,9 +1,8 @@
 import React from "react"
-import { Box, Text, Flex, PseudoBox, Image } from "@chakra-ui/core"
+import { Box, Text, Flex, PseudoBox, Image, Link } from "@chakra-ui/core"
 import { contact } from "./data"
 import { motion } from "framer-motion"
 import ReactTypingEffect from "react-typing-effect"
-import { bio } from "./data"
 import useIcon from "./customHooks"
 
 import avatar from "../image/avatar.png"
@@ -11,18 +10,6 @@ import avatar from "../image/avatar.png"
 const MotionFlex = motion.custom(Flex)
 const MotionPseudoBox = motion.custom(PseudoBox)
 const MotionBox = motion.custom(Box)
-
-const paragraphs = (text, i) => (
-  <Text
-    key={i}
-    fontSize={{ md: "18px", xs: "16px" }}
-    textAlign="justify"
-    fontFamily="Crimson Text, serif"
-    marginBottom={{ xs: 5 }}
-  >
-    {text}
-  </Text>
-)
 
 export const helloBox = (darkMode) => {
   return (
@@ -105,11 +92,80 @@ export const middleBox = (darkMode) => (
       flexBasis={{ md: "55%" }}
       w={{ md: "60%" }}
       p={1}
-      // bg="#fff5"
     >
-      {bio().map((bio, i) => {
-        return paragraphs(bio, i)
-      })}
+      <Text
+        fontSize={{ md: "18px", xs: "16px" }}
+        textAlign="justify"
+        fontFamily="Crimson Text, serif"
+        marginBottom={{ xs: 5 }}
+      >
+        I'm Alex. I recently completed{" "}
+        <Link
+          color={darkMode ? "#ffa7c4" : "#00BF86"}
+          href="https://lambdaschool.com/"
+        >
+          Lambda School's
+        </Link>{" "}
+        Web Development program and have been coding & learning consistently and
+        for the past year.
+      </Text>
+      <Text
+        fontSize={{ md: "18px", xs: "16px" }}
+        textAlign="justify"
+        fontFamily="Crimson Text, serif"
+        marginBottom={{ xs: 5 }}
+      >
+        Most of my work day to day is in React/Redux/Node architecture with
+        specialization in state management paradigms.
+      </Text>
+      <Text
+        fontSize={{ md: "18px", xs: "16px" }}
+        textAlign="justify"
+        fontFamily="Crimson Text, serif"
+        marginBottom={{ xs: 5 }}
+      >
+        I am also a{" "}
+        <Link
+          color={darkMode ? "#ffa7c4" : "#00BF86"}
+          href="https://www.pmi.org/certifications/types/business-analysis-pba"
+        >
+          PMI certified
+        </Link>{" "}
+        Business Analyst and the skills I acquired have come in handy with
+        managing requirements on all projects.
+      </Text>
+      <Text
+        fontSize={{ md: "18px", xs: "16px" }}
+        textAlign="justify"
+        fontFamily="Crimson Text, serif"
+        marginBottom={{ xs: 5 }}
+      >
+        I love to read fiction, and I write{" "}
+        <Link
+          color={darkMode ? "#ffa7c4" : "#00BF86"}
+          href="https://www.goodreads.com/user/show/26479310-pokerface"
+        >
+          reviews
+        </Link>{" "}
+        about some of the books I read.
+      </Text>
+      <Text
+        fontSize={{ md: "18px", xs: "16px" }}
+        textAlign="justify"
+        fontFamily="Crimson Text, serif"
+        marginBottom={{ xs: 5 }}
+      >
+        If you're still reading up to this point, odds are you're interesting
+        and / or you're interested in what I can do. Happy to have a
+        conversation. Please{" "}
+        <Link
+          color={darkMode ? "#ffa7c4" : "#00BF86"}
+          href="mailto:oguejioforalexander@gmail.com"
+        >
+          reach out
+        </Link>
+        .
+      </Text>
     </Box>
   </Box>
 )

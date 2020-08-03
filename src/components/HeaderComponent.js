@@ -6,7 +6,6 @@ import { toggleDark } from "../actions"
 import { motion } from "framer-motion"
 
 const HeaderComponent = ({ toggleDark, darkMode, page }) => {
-  console.log(darkMode)
   const MotionBox = motion.custom(Box)
   const spring = {
     type: "spring",
