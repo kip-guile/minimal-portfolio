@@ -1,13 +1,16 @@
-import React from "react";
-import { Box, Text, Flex, Image, PseudoBox } from "@chakra-ui/core";
-import { NavLink } from "react-router-dom";
-import logo from "../image/pink_logo.png";
-import redlogo from "../image/redlogo.png";
-import { MdLocationOn } from "react-icons/md";
-import { IconContext } from "react-icons";
+import React from "react"
+import { motion } from "framer-motion"
+import { Box, Text, Flex, Image, PseudoBox } from "@chakra-ui/core"
+import { NavLink } from "react-router-dom"
+import logo from "../image/pink_logo.png"
+import redlogo from "../image/redlogo.png"
+import { MdLocationOn } from "react-icons/md"
+import { IconContext } from "react-icons"
+
+const MotionBox = motion.custom(Box)
 
 export const logoBox = (darkMode) => (
-  <Box
+  <MotionBox
     w={{ md: "75%", xs: "100%" }}
     h={{ md: "13em", xs: "10em" }}
     display={{ md: "flex", xs: "none" }}
@@ -17,6 +20,12 @@ export const logoBox = (darkMode) => (
       md: darkMode ? "0.8em solid #ffecb2" : "0.8em solid #282c35",
       xs: darkMode ? "0.15em solid #ffecb2" : "0.15em solid #282c35",
     }}
+    animate={{ x: [50, -30, 0] }}
+    transition={{
+      ease: "easeOut",
+      duration: 1.5,
+      times: [0, 0.2, 1],
+    }}
   >
     <Image
       w={{ md: "70%", xs: "50%" }}
@@ -25,8 +34,8 @@ export const logoBox = (darkMode) => (
       alt="alexander"
       display="flex"
     />
-  </Box>
-);
+  </MotionBox>
+)
 export const nameBox = (darkMode) => (
   <Box
     w={{ md: "75%", xs: "100%" }}
@@ -67,7 +76,7 @@ export const nameBox = (darkMode) => (
       </Text>
     </Flex>
   </Box>
-);
+)
 export const navLinks = (darkMode, page) => (
   <Flex
     mt={2}
@@ -121,4 +130,4 @@ export const navLinks = (darkMode, page) => (
       </NavLink>
     )}
   </Flex>
-);
+)

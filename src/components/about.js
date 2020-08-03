@@ -8,6 +8,7 @@ import useIcon from "./customHooks"
 
 const MotionFlex = motion.custom(Flex)
 const MotionPseudoBox = motion.custom(PseudoBox)
+const MotionBox = motion.custom(Box)
 
 const paragraphs = (text, i) => (
   <Text
@@ -23,7 +24,7 @@ const paragraphs = (text, i) => (
 
 export const helloBox = (darkMode) => {
   return (
-    <Box
+    <MotionBox
       textAlign={{ xs: "center", md: "left" }}
       width="95%"
       minHeight={{ md: "13rem" }}
@@ -33,6 +34,12 @@ export const helloBox = (darkMode) => {
       borderBottom={{
         md: darkMode ? "0.8em solid #ffecb2" : "0.8em solid #282c35",
       }}
+      animate={{ x: [-30, 30, 0] }}
+      transition={{
+        ease: "easeOut",
+        duration: 1.5,
+        times: [0, 0.2, 1],
+      }}
     >
       <Text
         fontSize={{ md: "3xl", xs: "2xl" }}
@@ -40,9 +47,10 @@ export const helloBox = (darkMode) => {
         fontWeight="bold"
         color={darkMode ? "#ffa7c4" : "dodgerblue"}
       >
-        <ReactTypingEffect text="Alexander Oguejiofor" />
+        Hello, I am
+        <ReactTypingEffect text=" Alexander Oguejiofor" />
       </Text>
-    </Box>
+    </MotionBox>
   )
 }
 

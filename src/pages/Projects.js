@@ -1,7 +1,7 @@
-import React from "react";
-import { Box, Text } from "@chakra-ui/core";
-import Project from "../components/projects";
-import { dump } from "../components/data";
+import React from "react"
+import { Box, Text } from "@chakra-ui/core"
+import Project from "../components/projects"
+import { dump } from "../components/data"
 
 const Projects = () => {
   return (
@@ -35,12 +35,17 @@ const Projects = () => {
         ))}
       </Box>
       <Box>
-        <Text m={5} fontFamily="Cousine, monospace" fontSize="xs">
+        <Text
+          textAlign="center"
+          m={5}
+          fontFamily="Cousine, monospace"
+          fontSize="xs"
+        >
           © 2020 Alexander Oguejiofor
         </Text>
       </Box>
     </Box>
-  );
-};
+  )
+}
 
-export default Projects;
+export default Projects
