@@ -3,9 +3,6 @@ import { Box, Text, Flex, PseudoBox } from "@chakra-ui/core"
 import { contact } from "./data"
 import { motion } from "framer-motion"
 import ReactTypingEffect from "react-typing-effect"
-import { DiGit } from "react-icons/di"
-import { AiFillLinkedin, AiFillGithub } from "react-icons/ai"
-import { FaGoodreads } from "react-icons/fa"
 import { bio } from "./data"
 import useIcon from "./customHooks"
 
@@ -80,10 +77,9 @@ export const middleBox = (darkMode) => (
 export const contactBox = (darkMode) => (
   <Box
     display="flex"
-    p={5}
     flexDirection="column"
     justifyContent="center"
-    alignItems={{ md: "flex-start", xs: "center" }}
+    alignItems={{ md: "center", xs: "center" }}
     w="95%"
     h={{ md: "2500px" }}
     minHeight={{ md: "13rem" }}
@@ -91,56 +87,61 @@ export const contactBox = (darkMode) => (
     <Text
       fontSize="lg"
       fontWeight="bold"
+      textAlign="center"
       mb={6}
       mt={1}
       fontFamily="Lato, sans-serif"
       color={darkMode ? "#ffa7c4" : "dodgerblue"}
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      w="95%"
     >
       Get in touch
     </Text>
-    <Box
-      display={{ md: "flex" }}
-      w="100%"
-      justifyContent={{ md: "space-between" }}
-      textAlign={{ md: "justify", xs: "center" }}
+
+    <MotionFlex
+      mt={{ md: 4 }}
+      mb={{ xs: 4 }}
+      animate={{ x: [100, -50, 0] }}
+      transition={{
+        ease: "easeOut",
+        duration: 1.5,
+        times: [0, 0.2, 1],
+      }}
+      width={{ md: "100%", xs: "65%" }}
+      h={{ md: "3.5", xs: "7rem" }}
+      flexWrap="wrap"
+      justifyContent={{ md: "center", xs: "space-evenly" }}
+      alignItems={{ md: "center" }}
+      color={darkMode ? "#282c35" : "hsla(0,0%,100%,0.88)"}
     >
-      <MotionFlex
-        mt={{ md: 4, xs: 8 }}
-        mb={{ xs: 4 }}
-        animate={{ y: [50, -50, 0] }}
-        transition={{
-          ease: "easeOut",
-          duration: 1.5,
-          times: [0, 0.2, 1],
-        }}
-        width={{ md: "100%" }}
-        justifyContent={{ md: "center", xs: "center" }}
-        alignItems="center"
-        color={darkMode ? "#282c35" : "hsla(0,0%,100%,0.88)"}
-      >
-        {contact.map((contact) => (
-          <MotionPseudoBox
-            target="_blank"
-            href={contact.url}
-            as="a"
-            whileHover={{
-              scale: 1.2,
-              transition: { duration: 0.8 },
-            }}
-            _hover={{
-              backgroundColor: darkMode ? "#ffa7c4" : "dodgerblue",
-              cursor: "pointer",
-            }}
-            display="flex"
-            ml={5}
-            p={3}
-            borderRadius="50%"
-            bg={darkMode ? "#ffecb2" : "#282c35"}
-          >
-            {useIcon(contact.name)}
-          </MotionPseudoBox>
-        ))}
-      </MotionFlex>
-    </Box>
+      {contact.map((contact, i) => (
+        <MotionPseudoBox
+          h={{ md: "3.5rem", xs: "2.5rem" }}
+          w={{ md: "3.5rem", xs: "2.5rem" }}
+          target="_blank"
+          href={contact.url}
+          as="a"
+          whileHover={{
+            scale: 1.2,
+            transition: { duration: 0.8 },
+          }}
+          _hover={{
+            backgroundColor: darkMode ? "#ffa7c4" : "dodgerblue",
+            cursor: "pointer",
+          }}
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          ml={{ md: i === 0 ? 0 : 4, xs: 2 }}
+          p={3}
+          borderRadius="50%"
+          bg={darkMode ? "#ffecb2" : "#282c35"}
+        >
+          {useIcon(contact.name)}
+        </MotionPseudoBox>
+      ))}
+    </MotionFlex>
   </Box>
 )

@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react"
 import {
   AiFillLinkedin,
   AiFillGithub,
-  AiOutlineMail,
   AiFillTwitterCircle,
 } from "react-icons/ai"
 import { FaGoodreads, FaDev } from "react-icons/fa"
+import { MdMail } from "react-icons/md"
 
 const useIcon = (iconDescription) => {
   const [icon, setIcon] = useState(null)
@@ -13,7 +13,7 @@ const useIcon = (iconDescription) => {
     if (iconDescription === "linkedIn") {
       setIcon(<AiFillLinkedin fontSize="2rem" />)
     } else if (iconDescription === "email") {
-      setIcon(<AiOutlineMail fontSize="2rem" />)
+      setIcon(<MdMail fontSize="2rem" />)
     } else if (iconDescription === "goodreads") {
       setIcon(<FaGoodreads fontSize="2rem" />)
     } else if (iconDescription === "github") {

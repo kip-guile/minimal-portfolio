@@ -1,8 +1,8 @@
-import pure from "../image/pure-ret.png";
-import book from "../image/book_spren.png";
-import lambda from "../image/lambda_door.png";
-import split from "../image/split.png";
-import chat from "../image/chat_rage.png";
+import pure from "../image/pure-ret.png"
+import book from "../image/book_spren.png"
+import lambda from "../image/lambda_door.png"
+import split from "../image/split.png"
+import chat from "../image/chat_rage.png"
 
 export const dump = [
   {
@@ -55,7 +55,7 @@ export const dump = [
     github: "https://github.com/kip-guile/split-the-bill",
     deployed: "https://split-the-bill-six-alpha.now.sh/",
   },
-];
+]
 
 export const bio = () => [
   `I'm Alex. I recently completed Lambda School's Web Development program and have been programming consistently for the past year.`,
@@ -63,16 +63,19 @@ export const bio = () => [
   "I am also a PMI certified Business Analyst and the skills I acquired have come in handy with managing requirements on all projects.",
   "I love to read fiction, and I write reviews about some of the books I read.",
   "If you're still reading up to this point, odds are you're cool and / or you're interested in what I can do. Happy to have a conversation. Please reach out",
-];
+]
 
 export const contact = [
-  { name: "linkedIn", url: "https://www.linkedin.com/in/alexanderoguejiofor/" },
   { name: "email", url: "mailto:oguejioforalexander@gmail.com" },
+  { name: "github", url: "https://github.com/kip-guile" },
+  {
+    name: "linkedIn",
+    url: "https://www.linkedin.com/in/alexanderoguejiofor/",
+  },
+  { name: "dev", url: "https://dev.to/master_elodin" },
   {
     name: "goodreads",
     url: "https://www.goodreads.com/user/show/26479310-pokerface",
   },
-  { name: "github", url: "https://github.com/kip-guile" },
   { name: "twitter", url: "https://twitter.com/master_elodin" },
-  { name: "dev", url: "https://dev.to/master_elodin" },
-];
+]
