@@ -4,6 +4,54 @@ import lambda from "../image/lambda_door.png"
 import split from "../image/split.png"
 import chat from "../image/chat_rage.png"
 
+export const projectDump = [
+  {
+    img: pure,
+    name: "Pure Retail",
+    details:
+      "In this project, I integrated a REST API created with Express.js to handle requests for users. Utilized web tokens to securely authenticate users and authorize API endpoints for individual sessions. Used React to incorporate Ant Design, and then managed state on the client side using Redux. I also Planned and documented requirements and execution processes for agile release canvases.",
+    alt: "pure-retail",
+    github: "https://github.com/LABS-EU3/shopping_cart_backend",
+    deployed: "https://pure-retail.com/",
+  },
+  {
+    img: pure,
+    name: "Pure Retail",
+    details:
+      "In this project, I integrated a REST API created with Express.js to handle requests for users. Utilized web tokens to securely authenticate users and authorize API endpoints for individual sessions. Used React to incorporate Ant Design, and then managed state on the client side using Redux. I also Planned and documented requirements and execution processes for agile release canvases.",
+    alt: "lambda-door",
+    github: "https://github.com/Labs-EU-Flex/lambda-door-client",
+    deployed: "https://lambdadooreuflex.netlify.app/",
+  },
+  {
+    img: pure,
+    name: "Pure Retail",
+    details:
+      "In this project, I integrated a REST API created with Express.js to handle requests for users. Utilized web tokens to securely authenticate users and authorize API endpoints for individual sessions. Used React to incorporate Ant Design, and then managed state on the client side using Redux. I also Planned and documented requirements and execution processes for agile release canvases.",
+    alt: "chat-rage",
+    github: "https://github.com/kip-guile/chat-rage",
+    deployed: "https://chat-rage.web.app/",
+  },
+  {
+    img: pure,
+    name: "Pure Retail",
+    details:
+      "In this project, I integrated a REST API created with Express.js to handle requests for users. Utilized web tokens to securely authenticate users and authorize API endpoints for individual sessions. Used React to incorporate Ant Design, and then managed state on the client side using Redux. I also Planned and documented requirements and execution processes for agile release canvases.",
+    alt: "book-spren",
+    github: "https://github.com/kip-guile/Lit-spren",
+    deployed: "https://book-spren.firebaseapp.com/login",
+  },
+  {
+    img: pure,
+    name: "Pure Retail",
+    details:
+      "In this project, I integrated a REST API created with Express.js to handle requests for users. Utilized web tokens to securely authenticate users and authorize API endpoints for individual sessions. Used React to incorporate Ant Design, and then managed state on the client side using Redux. I also Planned and documented requirements and execution processes for agile release canvases.",
+    alt: "split-the-bill",
+    github: "https://github.com/kip-guile/split-the-bill",
+    deployed: "https://split-the-bill-six-alpha.now.sh/",
+  },
+]
+
 export const dump = [
   {
     gridColumn: "1/2",

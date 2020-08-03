@@ -32,6 +32,7 @@ const Projects = () => {
             name={project.name}
             github={project.github}
             deployed={project.deployed}
+            path={project.alt}
           />
         ))}
       </Box>
