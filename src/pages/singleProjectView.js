@@ -18,6 +18,9 @@ const SingleProject = ({ match, history, darkMode }) => {
       pt={{ md: "7rem" }}
     >
       <Button
+        size="xs"
+        mt={{ md: 0, xs: 10 }}
+        ml={{ md: 0, xs: 5 }}
         onClick={() => history.goBack()}
         leftIcon={IoIosArrowBack}
         variantColor={darkMode ? "#ffa7c4" : "#00BF86"}
