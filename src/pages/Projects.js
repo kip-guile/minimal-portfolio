@@ -1,9 +1,10 @@
 import React from "react"
+import { connect } from "react-redux"
 import { Box, Text } from "@chakra-ui/core"
 import Project from "../components/projects"
 import { dump } from "../components/data"
 
-const Projects = () => {
+const Projects = ({ darkMode }) => {
   return (
     <Box
       width={{ md: "75%" }}
@@ -33,6 +34,7 @@ const Projects = () => {
             github={project.github}
             deployed={project.deployed}
             path={project.alt}
+            darkMode={darkMode}
           />
         ))}
       </Box>
@@ -50,4 +52,8 @@ const Projects = () => {
   )
 }
 
-export default Projects
+const mapStateToProps = (state) => ({
+  darkMode: state.dark,
+})
+
+export default connect(mapStateToProps)(Projects)

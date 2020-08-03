@@ -13,6 +13,7 @@ const Project = ({
   github,
   deployed,
   path,
+  darkMode,
 }) => {
   const link = `/projects/${path}`
   return (
@@ -43,9 +44,24 @@ const Project = ({
           ))}
         </Stack>
         <Flex justifyContent="space-between">
-          <Text fontFamily="Crimson Text, serif">
+          <PseudoBox
+            borderBottom={darkMode ? "solid #ffecb2 1px" : "solid #282c35 1px"}
+            _active={{
+              color: darkMode ? "#ffa7c4" : "#00BF86",
+              borderBottom: darkMode
+                ? "solid #ffa7c4 1px"
+                : "solid #00BF86 1px",
+            }}
+            _hover={{
+              color: darkMode ? "#ffa7c4" : "#00BF86",
+              borderBottom: darkMode
+                ? "solid #ffa7c4 1px"
+                : "solid #00BF86 1px",
+            }}
+            fontFamily="Crimson Text, serif"
+          >
             <NavLink to={link}>{name}</NavLink>
-          </Text>
+          </PseudoBox>
           <Flex justifyContent="space-evenly" fontSize="25px" w="50%">
             <PseudoBox
               as="a"
