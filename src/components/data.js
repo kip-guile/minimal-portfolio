@@ -64,3 +64,15 @@ export const bio = () => [
   "I love to read fiction, and I write reviews about some of the books I read.",
   "If you're still reading up to this point, odds are you're cool and / or you're interested in what I can do. Happy to have a conversation. Please reach out",
 ];
+
+export const contact = [
+  { name: "linkedIn", url: "https://www.linkedin.com/in/alexanderoguejiofor/" },
+  { name: "email", url: "mailto:oguejioforalexander@gmail.com" },
+  {
+    name: "goodreads",
+    url: "https://www.goodreads.com/user/show/26479310-pokerface",
+  },
+  { name: "github", url: "https://github.com/kip-guile" },
+  { name: "twitter", url: "https://twitter.com/master_elodin" },
+  { name: "dev", url: "https://dev.to/master_elodin" },
+];

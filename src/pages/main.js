@@ -10,6 +10,8 @@ const Main = ({ component: Component, darkMode, ...rest }) => {
     rest.path === "/" ? setPage("about") : setPage("projects");
   }, [rest.path]);
 
+  console.log("test");
+
   return (
     <Route
       {...rest}

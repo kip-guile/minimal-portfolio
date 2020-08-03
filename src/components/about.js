@@ -1,6 +1,7 @@
-import React from "react";
-import { Box, Text, Flex, PseudoBox } from "@chakra-ui/core";
-import ReactTypingEffect from "react-typing-effect";
+import React from "react"
+import { Box, Text, Flex, PseudoBox } from "@chakra-ui/core"
+import { contact } from "./data"
+import ReactTypingEffect from "react-typing-effect"
 // import {
 //   DiJavascript1,
 //   DiReact,
@@ -12,7 +13,7 @@ import ReactTypingEffect from "react-typing-effect";
 //   DiMysql,
 //   DiLinux,
 // } from "react-icons/di";
-import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
+import { AiFillLinkedin, AiFillGithub } from "react-icons/ai"
 // import {
 //   FaGoodreads,
 //   FaNodeJs,
@@ -24,7 +25,7 @@ import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 // } from "react-icons/fa";
 // import { BsGraphUp } from "react-icons/bs";
 // import { GiJesterHat } from "react-icons/gi";
-import { bio } from "./data";
+import { bio } from "./data"
 
 // const skills = [
 //   { tag: DiJavascript1, name: "JavaScript" },
@@ -78,7 +79,7 @@ const paragraphs = (text, i) => (
   >
     {text}
   </Text>
-);
+)
 
 export const helloBox = (darkMode) => {
   return (
@@ -102,8 +103,8 @@ export const helloBox = (darkMode) => {
         <ReactTypingEffect text="Alexander Oguejiofor" />
       </Text>
     </Box>
-  );
-};
+  )
+}
 
 export const middleBox = (darkMode) => (
   <Box
@@ -150,11 +151,11 @@ export const middleBox = (darkMode) => (
       p={1}
     >
       {bio().map((bio, i) => {
-        return paragraphs(bio, i);
+        return paragraphs(bio, i)
       })}
     </Box>
   </Box>
-);
+)
 
 export const contactBox = (darkMode) => (
   <Box
@@ -183,114 +184,33 @@ export const contactBox = (darkMode) => (
       justifyContent={{ md: "space-between" }}
       textAlign={{ md: "justify", xs: "center" }}
     >
-      <Box>
-        <Text
-          fontSize={{ md: "18px", xs: "16px" }}
-          mb={4}
-          fontFamily="Crimson Text, serif"
-        >
-          You can email me at
-          <PseudoBox
-            ml={2}
-            _hover={{
-              color: darkMode ? "#ffa7c4" : "dodgerblue",
-              borderBottom: darkMode
-                ? "solid #ffa7c4 1px"
-                : "solid dodgerblue 1px",
-              cursor: "pointer",
-            }}
-            as="a"
-            href="mailto:oguejioforalexander@gmail.com"
-            borderBottom={darkMode ? "solid #ffecb2 1px" : "solid #282c35 1px"}
-          >
-            oguejioforalexander@gmail.com
-          </PseudoBox>
-        </Text>
-        <Text
-          fontSize={{ md: "18px", xs: "16px" }}
-          mb={4}
-          fontFamily="Crimson Text, serif"
-        >
-          I'm on Twitter at
-          <PseudoBox
-            ml={2}
-            _hover={{
-              color: darkMode ? "#ffa7c4" : "dodgerblue",
-              borderBottom: darkMode
-                ? "solid #ffa7c4 1px"
-                : "solid dodgerblue 1px",
-              cursor: "pointer",
-            }}
-            as="a"
-            href="mailto:oguejioforalexander@gmail.com"
-            borderBottom={darkMode ? "solid #ffecb2 1px" : "solid #282c35 1px"}
-          >
-            @master_elodin
-          </PseudoBox>
-        </Text>
-        <Text
-          fontSize={{ md: "18px", xs: "16px" }}
-          mb={4}
-          fontFamily="Crimson Text, serif"
-        >
-          You can see what I've been reading at
-          <PseudoBox
-            ml={2}
-            _hover={{
-              color: darkMode ? "#ffa7c4" : "dodgerblue",
-              borderBottom: darkMode
-                ? "solid #ffa7c4 1px"
-                : "solid dodgerblue 1px",
-              cursor: "pointer",
-            }}
-            as="a"
-            href="https://www.goodreads.com/user/show/26479310-pokerface"
-            borderBottom={darkMode ? "solid #ffecb2 1px" : "solid #282c35 1px"}
-          >
-            Goodreads
-          </PseudoBox>
-        </Text>
-      </Box>
       <Flex
         mt={{ md: 4, xs: 8 }}
         mb={{ xs: 4 }}
-        width={{ md: "30%" }}
-        justifyContent={{ md: "flex-start", xs: "center" }}
+        width={{ md: "100%" }}
+        justifyContent={{ md: "center", xs: "center" }}
         alignItems="center"
         color={darkMode ? "#282c35" : "hsla(0,0%,100%,0.88)"}
       >
-        <PseudoBox
-          target="_blank"
-          href="https://www.linkedin.com/in/alexanderoguejiofor/"
-          as="a"
-          _hover={{
-            backgroundColor: darkMode ? "#ffa7c4" : "dodgerblue",
-            cursor: "pointer",
-          }}
-          display="flex"
-          p={3}
-          borderRadius="50%"
-          bg={darkMode ? "#ffecb2" : "#282c35"}
-        >
-          <AiFillLinkedin fontSize="2rem" />
-        </PseudoBox>
-        <PseudoBox
-          target="_blank"
-          href="https://github.com/kip-guile"
-          as="a"
-          _hover={{
-            backgroundColor: darkMode ? "#ffa7c4" : "dodgerblue",
-            cursor: "pointer",
-          }}
-          display="flex"
-          ml={5}
-          p={3}
-          borderRadius="50%"
-          bg={darkMode ? "#ffecb2" : "#282c35"}
-        >
-          <AiFillGithub fontSize="2rem" />
-        </PseudoBox>
+        {contact.map((contact) => (
+          <PseudoBox
+            target="_blank"
+            href={contact.url}
+            as="a"
+            _hover={{
+              backgroundColor: darkMode ? "#ffa7c4" : "dodgerblue",
+              cursor: "pointer",
+            }}
+            display="flex"
+            ml={5}
+            p={3}
+            borderRadius="50%"
+            bg={darkMode ? "#ffecb2" : "#282c35"}
+          >
+            <AiFillLinkedin fontSize="2rem" />
+          </PseudoBox>
+        ))}
       </Flex>
     </Box>
   </Box>
-);
+)
