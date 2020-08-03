@@ -7,6 +7,7 @@ import { DiGit } from "react-icons/di"
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai"
 import { FaGoodreads } from "react-icons/fa"
 import { bio } from "./data"
+import useIcon from "./customHooks"
 
 const MotionFlex = motion.custom(Flex)
 const MotionPseudoBox = motion.custom(PseudoBox)
@@ -136,7 +137,7 @@ export const contactBox = (darkMode) => (
             borderRadius="50%"
             bg={darkMode ? "#ffecb2" : "#282c35"}
           >
-            <AiFillLinkedin fontSize="2rem" />
+            {useIcon(contact.name)}
           </MotionPseudoBox>
         ))}
       </MotionFlex>
