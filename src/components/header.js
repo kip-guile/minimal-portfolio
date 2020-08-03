@@ -87,7 +87,6 @@ export const navLinks = (darkMode, page) => (
     {page === "about" ? (
       <NavLink to="/projects">
         <PseudoBox
-          as="a"
           borderBottom={darkMode ? "solid #ffecb2 1px" : "solid #282c35 1px"}
           fontSize={{ xs: "18px" }}
           _active={{
@@ -106,7 +105,6 @@ export const navLinks = (darkMode, page) => (
       <NavLink to="/">
         <PseudoBox
           fontSize={{ xs: "18px" }}
-          as="a"
           borderBottom={darkMode ? "solid #ffecb2 1px" : "solid #282c35 1px"}
           _active={{
             color: darkMode ? "#ffa7c4" : "#00BF86",

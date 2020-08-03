@@ -23,6 +23,7 @@ const Projects = () => {
       >
         {dump.map((project, i) => (
           <Project
+            key={i}
             gridColumn={project.gridColumn}
             gridRow={project.gridRow}
             src={project.src}

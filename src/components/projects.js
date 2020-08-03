@@ -1,6 +1,6 @@
-import React from "react";
-import { PseudoBox, Image, Box, Stack, Flex, Tag, Text } from "@chakra-ui/core";
-import { AiFillGithub, AiOutlineLink } from "react-icons/ai";
+import React from "react"
+import { PseudoBox, Image, Box, Stack, Flex, Tag, Text } from "@chakra-ui/core"
+import { AiFillGithub, AiOutlineLink } from "react-icons/ai"
 
 const Project = ({
   gridColumn,
@@ -67,6 +67,6 @@ const Project = ({
       </Flex>
     </Box>
   </PseudoBox>
-);
+)
 
-export default Project;
+export default Project

@@ -65,7 +65,6 @@ export const middleBox = (darkMode) => (
       flexBasis={{ md: "30%" }}
       w={{ md: "50%" }}
       p={1}
-      // bg="#fff3"
     >
       <PseudoBox
         w={{ xs: "80%", md: "100%" }}
@@ -214,6 +213,7 @@ export const contactBox = (darkMode) => (
     >
       {contact.map((contact, i) => (
         <MotionPseudoBox
+          key={i}
           h={{ md: "3.5rem", xs: "2.5rem" }}
           w={{ md: "3.5rem", xs: "2.5rem" }}
           target="_blank"
