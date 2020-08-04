@@ -27,7 +27,7 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Main exact path="/" component={AboutComponent} />
-          <Main path="/projects" component={Projects} />
+          <Main exact path="/projects" component={Projects} />
           <Main path="/projects/:project" component={SingleProject} />
         </Switch>
       </BrowserRouter>
