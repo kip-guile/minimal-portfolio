@@ -4,6 +4,12 @@ import lambda from "../image/lambda_door.png"
 import split from "../image/split.png"
 import chat from "../image/chat_rage.png"
 import conway from "../image/conway.png"
+import purefont from "../image/pureretail.png"
+import bookfont from "../image/bookspren.png"
+import lambdafont from "../image/lambdadoor.png"
+import splitfont from "../image/splitthebill.png"
+import chatfont from "../image/chatrage.png"
+import conwayfont from "../image/conwaygol.png"
 
 export const projectDump = [
   {
@@ -67,7 +73,7 @@ export const dump = [
     gridColumn: "1/2",
     gridRow: "1/2",
     mid: false,
-    src: pure,
+    src: purefont,
     alt: "pure-retail",
     arr: ["React", "NodeJS", "MongoDB"],
     name: "Pure Retail",
@@ -77,7 +83,7 @@ export const dump = [
   {
     gridColumn: "2/3",
     gridRow: "1/2",
-    src: lambda,
+    src: lambdafont,
     mid: true,
     alt: "lambda-door",
     arr: ["React", "NodeJS", "PostGres"],
@@ -88,7 +94,7 @@ export const dump = [
   {
     gridColumn: "2/3",
     gridRow: "2/3",
-    src: chat,
+    src: chatfont,
     mid: true,
     alt: "chat-rage",
     arr: ["React", "Firebase"],
@@ -99,7 +105,7 @@ export const dump = [
   {
     gridColumn: "3/4",
     gridRow: "1/2",
-    src: book,
+    src: bookfont,
     mid: false,
     alt: "book-spren",
     arr: ["React", "NodeJS", "Firebase"],
@@ -110,7 +116,7 @@ export const dump = [
   {
     gridColumn: "3/4",
     gridRow: "2/3",
-    src: split,
+    src: splitfont,
     mid: false,
     alt: "split-the-bill",
     arr: ["React", "NodeJS", "PostGres"],
@@ -121,7 +127,7 @@ export const dump = [
   {
     gridColumn: "2/3",
     gridRow: "3/4",
-    src: conway,
+    src: conwayfont,
     mid: true,
     alt: "conway-gol",
     arr: ["React", "Redux"],

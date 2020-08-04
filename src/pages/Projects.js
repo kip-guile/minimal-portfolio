@@ -1,6 +1,6 @@
 import React from "react"
 import { connect } from "react-redux"
-import { Box, Text } from "@chakra-ui/core"
+import { Box, Text, Link } from "@chakra-ui/core"
 import Project from "../components/projects"
 import { dump } from "../components/data"
 
@@ -38,6 +38,30 @@ const Projects = ({ darkMode }) => {
             mid={project.mid}
           />
         ))}
+      </Box>
+      <Box>
+        <Text
+          textAlign="center"
+          m={5}
+          fontFamily="Cousine, monospace"
+          fontSize="xs"
+        >
+          Illustrations by{" "}
+          <Link
+            color={darkMode ? "#ffa7c4" : "#00BF86"}
+            href="https://iconscout.com/contributors/humaaans/illustrations"
+          >
+            Pablo Stanley
+          </Link>{" "}
+          on{" "}
+          <Link
+            color={darkMode ? "#ffa7c4" : "#00BF86"}
+            href="https://iconscout.com/"
+          >
+            Iconscout
+          </Link>
+          .
+        </Text>
       </Box>
       <Box>
         <Text

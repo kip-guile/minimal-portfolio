@@ -105,8 +105,8 @@ export const middleBox = (darkMode) => (
         >
           Lambda School's
         </Link>{" "}
-        Web Development program and have been coding & learning consistently and
-        for the past year.
+        Web Development program and have been coding & learning consistently
+        ever since.
       </Text>
       <Text
         fontSize={{ md: "18px", xs: "16px" }}
@@ -204,7 +204,7 @@ export const contactBox = (darkMode) => (
         duration: 1.5,
         times: [0, 0.2, 1],
       }}
-      width={{ md: "100%", xs: "65%" }}
+      width={{ md: "100%", xs: "50%" }}
       h={{ md: "3.5", xs: "7rem" }}
       flexWrap="wrap"
       justifyContent={{ md: "center", xs: "space-evenly" }}
