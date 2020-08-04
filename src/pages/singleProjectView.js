@@ -1,9 +1,12 @@
 import React from "react"
+import { motion } from "framer-motion"
 import { connect } from "react-redux"
 import { Box, Text, Image, PseudoBox, Flex, Button } from "@chakra-ui/core"
 import { AiFillGithub, AiOutlineLink } from "react-icons/ai"
 import { IoIosArrowBack } from "react-icons/io"
 import { projectDump } from "../components/data"
+
+const MotionPseudoBox = motion.custom(PseudoBox)
 
 const SingleProject = ({ match, history, darkMode }) => {
   const projectName = match.params.project
@@ -59,28 +62,36 @@ const SingleProject = ({ match, history, darkMode }) => {
               fontSize={{ md: 25, xs: 30 }}
               w="50%"
             >
-              <PseudoBox
+              <MotionPseudoBox
                 as="a"
                 target="_blank"
                 href={project.github}
                 _hover={{
-                  color: "#ffa7c4",
+                  color: darkMode ? "#ffa7c4" : "#00BF86",
                   cursor: "pointer",
+                }}
+                whileHover={{
+                  scale: 0.9,
+                  transition: { duration: 0.3 },
                 }}
               >
                 <AiFillGithub />
-              </PseudoBox>
-              <PseudoBox
+              </MotionPseudoBox>
+              <MotionPseudoBox
                 as="a"
                 target="_blank"
                 href={project.deployed}
                 _hover={{
-                  color: "#ffa7c4",
+                  color: darkMode ? "#ffa7c4" : "#00BF86",
                   cursor: "pointer",
+                }}
+                whileHover={{
+                  scale: 0.9,
+                  transition: { duration: 0.3 },
                 }}
               >
                 <AiOutlineLink />
-              </PseudoBox>
+              </MotionPseudoBox>
             </Flex>
             <Text
               mt={{ md: 10, xs: 10 }}

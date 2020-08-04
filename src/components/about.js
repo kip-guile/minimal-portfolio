@@ -105,8 +105,8 @@ export const middleBox = (darkMode) => (
         >
           Lambda School's
         </Link>{" "}
-        Web Development program and have been coding & learning consistently and
-        for the past year.
+        Web Development program and have been coding & learning consistently
+        ever since.
       </Text>
       <Text
         fontSize={{ md: "18px", xs: "16px" }}
