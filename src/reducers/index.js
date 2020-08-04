@@ -1,19 +1,19 @@
-import { combineReducers } from "redux";
-import { TOGGLE_DARK } from "../actions/types";
+import { combineReducers } from "redux"
+import { TOGGLE_DARK } from "../actions/types"
 
-const initialMode = false;
+const initialMode = true
 
 const darkModeReducer = (state = initialMode, action) => {
   switch (action.type) {
     case TOGGLE_DARK:
-      return !state;
+      return !state
     default:
-      return state;
+      return state
   }
-};
+}
 
 const rootReducer = combineReducers({
   dark: darkModeReducer,
-});
+})
 
-export default rootReducer;
+export default rootReducer

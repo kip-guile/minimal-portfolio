@@ -1,9 +1,10 @@
-import React from "react";
-import { Box, Text } from "@chakra-ui/core";
-import Project from "../components/projects";
-import { dump } from "../components/data";
+import React from "react"
+import { connect } from "react-redux"
+import { Box, Text } from "@chakra-ui/core"
+import Project from "../components/projects"
+import { dump } from "../components/data"
 
-const Projects = () => {
+const Projects = ({ darkMode }) => {
   return (
     <Box
       width={{ md: "75%" }}
@@ -23,6 +24,7 @@ const Projects = () => {
       >
         {dump.map((project, i) => (
           <Project
+            key={i}
             gridColumn={project.gridColumn}
             gridRow={project.gridRow}
             src={project.src}
@@ -31,16 +33,28 @@ const Projects = () => {
             name={project.name}
             github={project.github}
             deployed={project.deployed}
+            path={project.alt}
+            darkMode={darkMode}
+            mid={project.mid}
           />
         ))}
       </Box>
       <Box>
-        <Text m={5} fontFamily="Cousine, monospace" fontSize="xs">
+        <Text
+          textAlign="center"
+          m={5}
+          fontFamily="Cousine, monospace"
+          fontSize="xs"
+        >
           © 2020 Alexander Oguejiofor
         </Text>
       </Box>
     </Box>
-  );
-};
+  )
+}
 
-export default Projects;
+const mapStateToProps = (state) => ({
+  darkMode: state.dark,
+})
+
+export default connect(mapStateToProps)(Projects)

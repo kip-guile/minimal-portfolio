@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
-import { Box } from "@chakra-ui/core";
-import { Route } from "react-router-dom";
-import HeaderComponent from "../components/HeaderComponent";
+import React, { useEffect, useState } from "react"
+import { connect } from "react-redux"
+import { Box } from "@chakra-ui/core"
+import { Route } from "react-router-dom"
+import HeaderComponent from "../components/HeaderComponent"
 
 const Main = ({ component: Component, darkMode, ...rest }) => {
-  const [page, setPage] = useState("");
+  const [page, setPage] = useState("")
   useEffect(() => {
-    rest.path === "/" ? setPage("about") : setPage("projects");
-  }, [rest.path]);
+    rest.path === "/" ? setPage("about") : setPage("projects")
+  }, [rest.path])
 
   return (
     <Route
@@ -26,14 +26,14 @@ const Main = ({ component: Component, darkMode, ...rest }) => {
             <HeaderComponent page={page} />
             <Component {...props} />
           </Box>
-        );
+        )
       }}
     />
-  );
-};
+  )
+}
 
 const mapStateToProps = (state) => ({
   darkMode: state.dark,
-});
+})
 
-export default connect(mapStateToProps)(Main);
+export default connect(mapStateToProps)(Main)
