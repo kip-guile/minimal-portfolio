@@ -14,6 +14,7 @@ const Project = ({
   deployed,
   path,
   darkMode,
+  mid,
 }) => {
   const link = `/projects/${path}`
   return (

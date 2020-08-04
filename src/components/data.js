@@ -3,6 +3,7 @@ import book from "../image/book_spren.png"
 import lambda from "../image/lambda_door.png"
 import split from "../image/split.png"
 import chat from "../image/chat_rage.png"
+import conway from "../image/conway.png"
 
 export const projectDump = [
   {
@@ -50,12 +51,22 @@ export const projectDump = [
     github: "https://github.com/kip-guile/split-the-bill",
     deployed: "https://split-the-bill-six-alpha.now.sh/",
   },
+  {
+    img: conway,
+    name: "Conway's game of life",
+    details:
+      "Conway’s game of life is a zero player game which means its evolution throughout the game is determined by its initial input and no further interaction is required. It was invented by Cambridge mathematician, John Horton Conway. The game became very popular when it was mentioned in an article published by Scientific American in 1970. Fundamentally, the Game of Life is a grid featuring a collection of cells which can live, die or multiply depending on the initial conditions. These cells form various patterns throughout the course of the game. This implementation of the algorithm was created using React and Redux, with arrays in an object as the data structure. It was designed so that the cells that are off the edge of the grid wrap around to the far side. Another possible implementation is to have every cell at the end of the grid to be in the ‘dead’ state. Obviously various implementations will have different effects on the lifecycle of the cells in the grid.",
+    alt: "conway-gol",
+    github: "https://github.com/kip-guile/Game-of-life",
+    deployed: "https://game-of-life.kvothe.vercel.app/",
+  },
 ]
 
 export const dump = [
   {
     gridColumn: "1/2",
     gridRow: "1/2",
+    mid: false,
     src: pure,
     alt: "pure-retail",
     arr: ["React", "NodeJS", "MongoDB"],
@@ -67,6 +78,7 @@ export const dump = [
     gridColumn: "2/3",
     gridRow: "1/2",
     src: lambda,
+    mid: true,
     alt: "lambda-door",
     arr: ["React", "NodeJS", "PostGres"],
     name: "Lambda Door",
@@ -77,6 +89,7 @@ export const dump = [
     gridColumn: "2/3",
     gridRow: "2/3",
     src: chat,
+    mid: true,
     alt: "chat-rage",
     arr: ["React", "Firebase"],
     name: "Chat Rage",
@@ -87,6 +100,7 @@ export const dump = [
     gridColumn: "3/4",
     gridRow: "1/2",
     src: book,
+    mid: false,
     alt: "book-spren",
     arr: ["React", "NodeJS", "Firebase"],
     name: "Book Spren",
@@ -97,11 +111,23 @@ export const dump = [
     gridColumn: "3/4",
     gridRow: "2/3",
     src: split,
+    mid: false,
     alt: "split-the-bill",
     arr: ["React", "NodeJS", "PostGres"],
     name: "Split the bill",
     github: "https://github.com/kip-guile/split-the-bill",
     deployed: "https://split-the-bill-six-alpha.now.sh/",
+  },
+  {
+    gridColumn: "2/3",
+    gridRow: "3/4",
+    src: conway,
+    mid: true,
+    alt: "conway-gol",
+    arr: ["React", "Redux"],
+    name: "Conway's game of life",
+    github: "https://github.com/kip-guile/Game-of-life",
+    deployed: "https://game-of-life.kvothe.vercel.app/",
   },
 ]
 

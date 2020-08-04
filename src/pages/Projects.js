@@ -35,6 +35,7 @@ const Projects = ({ darkMode }) => {
             deployed={project.deployed}
             path={project.alt}
             darkMode={darkMode}
+            mid={project.mid}
           />
         ))}
       </Box>
