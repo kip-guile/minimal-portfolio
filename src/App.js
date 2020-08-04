@@ -27,8 +27,8 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Main exact path="/" component={AboutComponent} />
-          <Main exact path="/projects" component={Projects} />
-          <Main exact path="/projects/:project" component={SingleProject} />
+          <Main path="/projects" component={Projects} />
+          <Main path="/projects/:project" component={SingleProject} />
         </Switch>
       </BrowserRouter>
     </ThemeProvider>
