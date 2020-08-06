@@ -1,4 +1,4 @@
-## Portfolio Wbsite
-Run npm i
-Run npm start for both client!
-All should be working now.
+## Portfolio Website
+- Run npm i
+- Run npm start!
+- All should be working now.
