@@ -1,32 +1,41 @@
-import React from "react";
-import { Box, Text, Flex, Image, PseudoBox } from "@chakra-ui/core";
-import { NavLink } from "react-router-dom";
-import logo from "../image/pink_logo.png";
-import redlogo from "../image/redlogo.png";
-import { MdLocationOn } from "react-icons/md";
-import { IconContext } from "react-icons";
+import React from "react"
+import { motion } from "framer-motion"
+import { Box, Text, Flex, Image, PseudoBox } from "@chakra-ui/core"
+import { NavLink } from "react-router-dom"
+import logo from "../image/pink_logo.png"
+import dark_logo from "../image/dark_logo.png"
+import { MdLocationOn } from "react-icons/md"
+import { IconContext } from "react-icons"
+
+const MotionBox = motion.custom(Box)
 
 export const logoBox = (darkMode) => (
-  <Box
+  <MotionBox
     w={{ md: "75%", xs: "100%" }}
     h={{ md: "13em", xs: "10em" }}
-    display="flex"
+    display={{ md: "flex", xs: "none" }}
     justifyContent="center"
     alignItems="center"
     borderBottom={{
       md: darkMode ? "0.8em solid #ffecb2" : "0.8em solid #282c35",
       xs: darkMode ? "0.15em solid #ffecb2" : "0.15em solid #282c35",
     }}
+    animate={{ x: [50, -30, 0] }}
+    transition={{
+      ease: "easeOut",
+      duration: 1.5,
+      times: [0, 0.2, 1],
+    }}
   >
     <Image
       w={{ md: "70%", xs: "50%" }}
       rounded="lg"
-      src={darkMode ? logo : redlogo}
+      src={darkMode ? logo : dark_logo}
       alt="alexander"
       display="flex"
     />
-  </Box>
-);
+  </MotionBox>
+)
 export const nameBox = (darkMode) => (
   <Box
     w={{ md: "75%", xs: "100%" }}
@@ -40,18 +49,18 @@ export const nameBox = (darkMode) => (
     }}
   >
     <Text
-      color={darkMode ? "#ffa7c4" : "dodgerblue"}
-      fontSize="lg"
+      color={darkMode ? "#ffa7c4" : "#00BF86"}
+      fontSize={{ md: "lg", xs: "25px" }}
       fontWeight="bold"
       mb={5}
-      fontFamily="Cousine, monospace"
+      fontFamily="Lato, sans-serif"
     >
       Alexander Oguejiofor
     </Text>
     <Text
       textAlign={{ md: "center", xs: "justify" }}
       fontSize={{ md: "1em", xs: "18px" }}
-      fontFamily="Cousine"
+      fontFamily="Crimson Text, serif"
     >
       Web Developer & Business Analyst
     </Text>
@@ -59,55 +68,56 @@ export const nameBox = (darkMode) => (
       <IconContext.Provider value={{ className: "react-icon" }}>
         <MdLocationOn style={{ fontSize: "1.2em", marginRight: "10px" }} />
       </IconContext.Provider>
-      <Text fontSize={{ md: "1em", xs: "18px" }} fontFamily="Cousine">
+      <Text
+        fontSize={{ md: "1em", xs: "18px" }}
+        fontFamily="Crimson Text, serif"
+      >
         Lagos, NG
       </Text>
     </Flex>
   </Box>
-);
-export const navLinks = (darkMode) => (
+)
+export const navLinks = (darkMode, page) => (
   <Flex
     mt={2}
     mb={{ xs: 10 }}
-    fontFamily="Cousine, monospace"
+    fontFamily="Crimson Text, serif"
     justifyContent={{ xs: "center" }}
   >
-    <NavLink to="/projects">
-      <PseudoBox
-        as="a"
-        borderBottom={darkMode ? "solid #ffecb2 1px" : "solid #282c35 1px"}
-        fontSize={{ xs: "18px" }}
-        _active={{
-          color: darkMode ? "#ffa7c4" : "dodgerblue",
-          borderBottom: darkMode ? "solid #ffa7c4 1px" : "solid dodgerblue 1px",
-        }}
-        _hover={{
-          color: darkMode ? "#ffa7c4" : "dodgerblue",
-          borderBottom: darkMode ? "solid #ffa7c4 1px" : "solid dodgerblue 1px",
-        }}
-      >
-        PROJECTS
-      </PseudoBox>
-    </NavLink>
-    <Text ml={4} mr={4} fontSize="sm">
-      /
-    </Text>
-    <NavLink to="/">
-      <PseudoBox
-        fontSize={{ xs: "18px" }}
-        as="a"
-        borderBottom={darkMode ? "solid #ffecb2 1px" : "solid #282c35 1px"}
-        _active={{
-          color: darkMode ? "#ffa7c4" : "dodgerblue",
-          borderBottom: darkMode ? "solid #ffa7c4 1px" : "solid dodgerblue 1px",
-        }}
-        _hover={{
-          color: darkMode ? "#ffa7c4" : "dodgerblue",
-          borderBottom: darkMode ? "solid #ffa7c4 1px" : "solid dodgerblue 1px",
-        }}
-      >
-        ABOUT
-      </PseudoBox>{" "}
-    </NavLink>
+    {page === "about" ? (
+      <NavLink to="/projects">
+        <PseudoBox
+          borderBottom={darkMode ? "solid #ffecb2 1px" : "solid #282c35 1px"}
+          fontSize={{ xs: "18px" }}
+          _active={{
+            color: darkMode ? "#ffa7c4" : "#00BF86",
+            borderBottom: darkMode ? "solid #ffa7c4 1px" : "solid #00BF86 1px",
+          }}
+          _hover={{
+            color: darkMode ? "#ffa7c4" : "#00BF86",
+            borderBottom: darkMode ? "solid #ffa7c4 1px" : "solid #00BF86 1px",
+          }}
+        >
+          MY PROJECTS
+        </PseudoBox>
+      </NavLink>
+    ) : (
+      <NavLink to="/">
+        <PseudoBox
+          fontSize={{ xs: "18px" }}
+          borderBottom={darkMode ? "solid #ffecb2 1px" : "solid #282c35 1px"}
+          _active={{
+            color: darkMode ? "#ffa7c4" : "#00BF86",
+            borderBottom: darkMode ? "solid #ffa7c4 1px" : "solid #00BF86 1px",
+          }}
+          _hover={{
+            color: darkMode ? "#ffa7c4" : "#00BF86",
+            borderBottom: darkMode ? "solid #ffa7c4 1px" : "solid #00BF86 1px",
+          }}
+        >
+          ABOUT ME
+        </PseudoBox>{" "}
+      </NavLink>
+    )}
   </Flex>
-);
+)

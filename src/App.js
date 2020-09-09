@@ -1,11 +1,12 @@
-import React from "react";
-import { ThemeProvider, CSSReset } from "@chakra-ui/core";
-import { BrowserRouter, Switch } from "react-router-dom";
-import { theme } from "@chakra-ui/core";
-import "./App.css";
-import Main from "./pages/main";
-import AboutComponent from "./pages/AboutComponent";
-import Projects from "./pages/Projects";
+import React from "react"
+import { ThemeProvider, CSSReset } from "@chakra-ui/core"
+import { BrowserRouter, Switch } from "react-router-dom"
+import { theme } from "@chakra-ui/core"
+import "./App.css"
+import Main from "./pages/main"
+import AboutComponent from "./pages/AboutComponent"
+import Projects from "./pages/Projects"
+import SingleProject from "./pages/singleProjectView"
 
 const customTheme = {
   ...theme,
@@ -17,7 +18,7 @@ const customTheme = {
       700: "#2a69ac",
     },
   },
-};
+}
 
 function App() {
   return (
@@ -27,10 +28,11 @@ function App() {
         <Switch>
           <Main exact path="/" component={AboutComponent} />
           <Main exact path="/projects" component={Projects} />
+          <Main path="/projects/:project" component={SingleProject} />
         </Switch>
       </BrowserRouter>
     </ThemeProvider>
-  );
+  )
 }
 
-export default App;
+export default App
