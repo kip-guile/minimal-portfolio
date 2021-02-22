@@ -9,6 +9,8 @@ import {
   SINGLE_PROJECTS_ERROR,
 } from './types'
 
+const uri = process.env.REACT_APP_URI
+
 export const toggleDark = () => {
   return {
     type: TOGGLE_DARK,
@@ -18,7 +20,7 @@ export const toggleDark = () => {
 export const fetchProjects = () => (dispatch) => {
   dispatch({ type: PROJECTS_LOADING })
   axios
-    .get('/projects')
+    .get(`${uri}/projects`)
     .then((res) => {
       dispatch({
         type: ADD_PROJECTS,
@@ -37,7 +39,7 @@ export const fetchSingleProjects = () => {
   return async (dispatch) => {
     dispatch({ type: SINGLE_PROJECTS_LOADING })
     try {
-      const res = await axios.get('/singleprojects')
+      const res = await axios.get(`${uri}/singleprojects`)
       dispatch({
         type: ADD_SINGLE_PROJECTS,
         payload: res.data,
