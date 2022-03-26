@@ -66,13 +66,13 @@ export const nameBox = (darkMode) => (
     </Text>
     <Flex mt={5}>
       <IconContext.Provider value={{ className: 'react-icon' }}>
-        <MdLocationOn style={{ fontSize: '1.2em', marginRight: '10px' }} />
+        <MdLocationOn style={{ fontSize: '1.2em', marginRight: '4px' }} />
       </IconContext.Provider>
       <Text
         fontSize={{ md: '1em', xs: '18px' }}
         fontFamily='Crimson Text, serif'
       >
-        Lagos, NG
+        Berlin, Germany
       </Text>
     </Flex>
   </Box>
@@ -98,7 +98,12 @@ export const navLinks = (darkMode, page) => (
             borderBottom: darkMode ? 'solid #ffa7c4 1px' : 'solid #00BF86 1px',
           }}
         >
-          MY PROJECTS
+          <Text
+            fontFamily='Crimson Text, serif'
+            color={darkMode ? '#ffa7c4' : '#00BF86'}
+          >
+            MY PROJECTS
+          </Text>
         </PseudoBox>
       </NavLink>
     ) : (
@@ -115,7 +120,12 @@ export const navLinks = (darkMode, page) => (
             borderBottom: darkMode ? 'solid #ffa7c4 1px' : 'solid #00BF86 1px',
           }}
         >
-          ABOUT ME
+          <Text
+            fontFamily='Crimson Text, serif'
+            color={darkMode ? '#ffa7c4' : '#00BF86'}
+          >
+            ABOUT ME
+          </Text>
         </PseudoBox>{' '}
       </NavLink>
     )}

@@ -1,14 +1,11 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { Box, Text, Link } from '@chakra-ui/core'
 import Project from '../components/projects'
-import { fetchProjects } from '../actions/index'
 import Skeleton from '../components/skeleton'
+import { dump } from '../components/data'
 
-const Projects = ({ darkMode, projects, fetchProjects }) => {
-  useEffect(() => {
-    fetchProjects()
-  }, [fetchProjects])
+const Projects = ({ darkMode }) => {
   return (
     <Box
       width={{ md: '75%' }}
@@ -19,7 +16,7 @@ const Projects = ({ darkMode, projects, fetchProjects }) => {
       <Box
         w={{ xs: '100%', md: '100%' }}
         display={{
-          md: projects.projects.length > 0 ? 'grid' : 'flex',
+          md: dump.length > 0 ? 'grid' : 'flex',
           xs: 'flex',
         }}
         flexDirection={{ xs: 'column', md: 'row' }}
@@ -31,8 +28,8 @@ const Projects = ({ darkMode, projects, fetchProjects }) => {
         gridGap={10}
         padding={{ md: 20, xs: 5 }}
       >
-        {projects.projects.length > 0
-          ? projects.projects.map((project, i) => (
+        {dump.length > 0
+          ? dump.map((project, i) => (
               <Project
                 key={i}
                 gridColumn={project.gridColumn}
@@ -90,7 +87,6 @@ const Projects = ({ darkMode, projects, fetchProjects }) => {
 
 const mapStateToProps = (state) => ({
   darkMode: state.dark,
-  projects: state.projects,
 })
 
-export default connect(mapStateToProps, { fetchProjects })(Projects)
+export default connect(mapStateToProps)(Projects)
