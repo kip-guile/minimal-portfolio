@@ -2,9 +2,8 @@ import React from 'react'
 import { Box, Text, Flex, PseudoBox, Image, Link } from '@chakra-ui/core'
 import { contact } from './data'
 import { motion } from 'framer-motion'
-import ReactTypingEffect from 'react-typing-effect'
+import { AiFillCaretDown, AiFillCaretRight } from 'react-icons/ai'
 import useIcon from './customHooks'
-
 import avatar from '../image/avatar.png'
 
 const MotionFlex = motion.custom(Flex)
@@ -20,9 +19,6 @@ export const helloBox = (darkMode) => {
       display={{ md: 'flex', xs: 'none' }}
       justifyContent='center'
       alignItems='center'
-      borderBottom={{
-        md: darkMode ? '0.8em solid #ffecb2' : '0.8em solid #282c35',
-      }}
       animate={{ x: [-30, 30, 0] }}
       transition={{
         ease: 'easeOut',
@@ -31,19 +27,18 @@ export const helloBox = (darkMode) => {
       }}
     >
       <Text
-        fontSize={{ md: '3xl', xs: '2xl' }}
+        fontSize='7vw'
         fontFamily='Lato, sans-serif'
         fontWeight='bold'
         color={darkMode ? '#ffa7c4' : '#00BF86'}
       >
-        Hello, I am
-        <ReactTypingEffect text=' Alexander Oguejiofor' />
+        Alexander Oguejiofor
       </Text>
     </MotionBox>
   )
 }
 
-export const middleBox = (darkMode) => (
+export const middleBox = (darkMode, moreInfo, toggleInfoBox) => (
   <Box
     textAlign={{ xs: 'center', md: 'left' }}
     display={{ md: 'flex' }}
@@ -55,7 +50,6 @@ export const middleBox = (darkMode) => (
     }}
     w='95%'
     p={{ md: 0, xs: 5 }}
-    minHeight={{ md: '55rem' }}
   >
     <Box
       display='flex'
@@ -101,15 +95,117 @@ export const middleBox = (darkMode) => (
         fontFamily='Crimson Text, serif'
         marginBottom={{ xs: 5 }}
       >
-        I'm Alex. I recently completed{' '}
+        I am a full stack web developer. I love to make things work on the web,
+        and the things that work already, work even better.
+      </Text>
+      <Text
+        fontSize={{ md: '18px', xs: '16px' }}
+        textAlign='justify'
+        fontFamily='Crimson Text, serif'
+        marginBottom={{ xs: 5 }}
+      >
+        Most of my work day to day is in React/Redux/Node architecture and its
+        ecosystem
+      </Text>
+      <Box display='flex' alignItems='center' marginBottom={{ xs: 5 }}>
+        {moreInfo ? (
+          <AiFillCaretDown onClick={toggleInfoBox} cursor='pointer' />
+        ) : (
+          <AiFillCaretRight onClick={toggleInfoBox} cursor='pointer' />
+        )}
+        <Text
+          fontSize={{ md: '18px', xs: '16px' }}
+          textAlign='justify'
+          fontFamily='Crimson Text, serif'
+          marginLeft={{ xs: 2 }}
+        >
+          Some other things
+        </Text>
+      </Box>
+      <Box
+        opacity={moreInfo ? 1 : 0}
+        maxHeight={moreInfo ? 10000 : 0}
+        transition='max-height 0.3s ease-out, opacity 0.5s'
+        overflow='hidden'
+      >
+        <Text
+          fontSize={{ md: '18px', xs: '16px' }}
+          textAlign='justify'
+          fontFamily='Crimson Text, serif'
+          marginBottom={{ xs: 5 }}
+        >
+          - When I'm not hacking out code, I more than likely have my head stuck
+          in some work of fiction, and i make{' '}
+          <Link
+            color={darkMode ? '#ffa7c4' : '#00BF86'}
+            href='https://www.youtube.com/channel/UCFnWwjzniuSeXUb_n0tG0QA'
+          >
+            video reviews
+          </Link>{' '}
+          about some of the books I read. My favorite genre is Epic/High
+          Fantasy.
+        </Text>
+        <Text
+          fontSize={{ md: '18px', xs: '16px' }}
+          textAlign='justify'
+          fontFamily='Crimson Text, serif'
+          marginBottom={{ xs: 5 }}
+        >
+          - I also like sharing my knowledge of the things I learn by writing{' '}
+          <Link
+            color={darkMode ? '#ffa7c4' : '#00BF86'}
+            href='https://dev.to/master_elodin'
+          >
+            blog posts
+          </Link>{' '}
+          on Dev.to
+        </Text>
+        <Text
+          fontSize={{ md: '18px', xs: '16px' }}
+          textAlign='justify'
+          fontFamily='Crimson Text, serif'
+          marginBottom={{ xs: 5 }}
+        >
+          - I am a{' '}
+          <Link
+            color={darkMode ? '#ffa7c4' : '#00BF86'}
+            href='https://www.pmi.org/certifications/types/business-analysis-pba'
+          >
+            PMI certified
+          </Link>{' '}
+          Business Analyst and the skills I acquired have come in handy with
+          managing requirements on all projects.
+        </Text>
+        <Text
+          fontSize={{ md: '18px', xs: '16px' }}
+          textAlign='justify'
+          fontFamily='Crimson Text, serif'
+          marginBottom={{ xs: 5 }}
+        >
+          - I am a{' '}
+          <Link
+            color={darkMode ? '#ffa7c4' : '#00BF86'}
+            href='https://lambdaschool.com/'
+          >
+            BloomTech
+          </Link>{' '}
+          ( formerly Lambda School ) Alum
+        </Text>
+      </Box>
+      <Text
+        fontSize={{ md: '18px', xs: '16px' }}
+        textAlign='justify'
+        fontFamily='Crimson Text, serif'
+        marginBottom={{ xs: 5 }}
+      >
+        "The more you learn, the more your realize how little you know. Still,
+        the struggle itself is worthwile." -{' '}
         <Link
           color={darkMode ? '#ffa7c4' : '#00BF86'}
           href='https://lambdaschool.com/'
         >
-          Lambda School's
-        </Link>{' '}
-        Web Development program and have been coding & learning consistently
-        ever since.
+          Joe Abercrombie, The Blade Itself
+        </Link>
       </Text>
       <Text
         fontSize={{ md: '18px', xs: '16px' }}
@@ -117,24 +213,16 @@ export const middleBox = (darkMode) => (
         fontFamily='Crimson Text, serif'
         marginBottom={{ xs: 5 }}
       >
-        Most of my work day to day is in React/Redux/Node architecture with
-        specialization in state management paradigms.
-      </Text>
-      <Text
-        fontSize={{ md: '18px', xs: '16px' }}
-        textAlign='justify'
-        fontFamily='Crimson Text, serif'
-        marginBottom={{ xs: 5 }}
-      >
-        I am also a{' '}
+        A quote from one of my favorite authors. Might be its not original as it
+        is a derivative of Aristotle's quote. You take this idea a little
+        further and might also be you can apply{' '}
         <Link
           color={darkMode ? '#ffa7c4' : '#00BF86'}
-          href='https://www.pmi.org/certifications/types/business-analysis-pba'
+          href='https://www.youtube.com/watch?v=GiPe1OiKQuk'
         >
-          PMI certified
+          Rumsfeld's famous quote
         </Link>{' '}
-        Business Analyst and the skills I acquired have come in handy with
-        managing requirements on all projects.
+        about unknown unknowns.
       </Text>
       <Text
         fontSize={{ md: '18px', xs: '16px' }}
@@ -142,14 +230,9 @@ export const middleBox = (darkMode) => (
         fontFamily='Crimson Text, serif'
         marginBottom={{ xs: 5 }}
       >
-        I love to read fiction, and I write{' '}
-        <Link
-          color={darkMode ? '#ffa7c4' : '#00BF86'}
-          href='https://www.goodreads.com/user/show/26479310-pokerface'
-        >
-          reviews
-        </Link>{' '}
-        about some of the books I read.
+        I apply these ideas heuristically to my career, and as such I consider
+        myself a lifelong learner, always curious and looking to grow and
+        improve.
       </Text>
       <Text
         fontSize={{ md: '18px', xs: '16px' }}

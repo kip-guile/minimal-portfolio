@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { motion } from 'framer-motion'
 import { connect } from 'react-redux'
 import {
@@ -12,24 +12,15 @@ import {
 } from '@chakra-ui/core'
 import { AiFillGithub, AiOutlineLink } from 'react-icons/ai'
 import { IoIosArrowBack } from 'react-icons/io'
-import { fetchSingleProjects } from '../actions/index'
+import { projectDump } from '../components/data'
 
 const MotionPseudoBox = motion.custom(PseudoBox)
 
-const SingleProject = ({
-  singleProjects,
-  match,
-  history,
-  darkMode,
-  fetchSingleProjects,
-}) => {
-  useEffect(() => {
-    fetchSingleProjects()
-  }, [fetchSingleProjects])
+const SingleProject = ({ match, history, darkMode }) => {
   const projectName = match.params.project
   const projectFile =
-    singleProjects.projects.length > 0
-      ? singleProjects.projects.filter((project) => project.alt === projectName)
+    projectDump.length > 0
+      ? projectDump.filter((project) => project.alt === projectName)
       : []
 
   return (
@@ -75,7 +66,11 @@ const SingleProject = ({
               {project.name}
             </Text>
             {project.img ? (
-              <Image src={project.img} alt={project.alt} />
+              <Image
+                fallbackSrc='https://via.placeholder.com/150'
+                src={project.img}
+                alt={project.alt}
+              />
             ) : (
               <Skeleton w='100%' h='100%' />
             )}
@@ -144,7 +139,6 @@ const SingleProject = ({
 
 const mapStateToProps = (state) => ({
   darkMode: state.dark,
-  singleProjects: state.singleProjects,
 })
 
-export default connect(mapStateToProps, { fetchSingleProjects })(SingleProject)
+export default connect(mapStateToProps)(SingleProject)

@@ -46,7 +46,12 @@ const Project = ({
         times: [0, 0.2, 1],
       }}
     >
-      <Image bg={color} src={src} alt={alt} />
+      <Image
+        fallbackSrc='https://via.placeholder.com/150'
+        bg={color}
+        src={src}
+        alt={alt}
+      />
       <Box mt={2} h={{ md: '30%' }} w={{ md: '100%' }}>
         <Stack mt={2} spacing={4} isInline mb={3}>
           {arr.map((tech, i) => (
